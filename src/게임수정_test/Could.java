@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -6,10 +6,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Could {
-	private int x;//±¸¸§ÀÇ xÃàÀÇ À§Ä¡
-	private int y;//±¸¸§ÀÇ yÃàÀÇ À§Ä¡
-	private Image img= new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\bin\\°ÔÀÓ¼öÁ¤\\±¸¸§2.png").getImage();//±¸¸§ ÀÌ¹ÌÁö
-	private int move = (int)(Math.random()*2);//±¸¸§ÀÇ ÀÌµ¿¼Óµµ¸¦ 0~2Á¤µµÀÇ Â÷ÀÌ¸¦ ÁÜ
+	private int x;//êµ¬ë¦„ì˜ xì¶•ì˜ ìœ„ì¹˜
+	private int y;//êµ¬ë¦„ì˜ yì¶•ì˜ ìœ„ì¹˜
+	private Image img= new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\bin\\ê²Œì„ìˆ˜ì •\\êµ¬ë¦„2.png").getImage();//êµ¬ë¦„ ì´ë¯¸ì§€
+	private int move = (int)(Math.random()*2);//êµ¬ë¦„ì˜ ì´ë™ì†ë„ë¥¼ 0~2ì •ë„ì˜ ì°¨ì´ë¥¼ ì¤Œ
 	
 	public Could(int x, int y) {
 		this.x = x;
@@ -17,11 +17,11 @@ public class Could {
 	}
 	
 	public void drawCould(Graphics g) {
-		g.drawImage(img, x, y,null);//±¸¸§ÀÇ ÀÌ¹ÌÁö¸¦ ±×·ÁÁÜ
+		g.drawImage(img, x, y,null);//êµ¬ë¦„ì˜ ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤Œ
 	}
 	
 	public void move() {
-		this.x -=4+move;//0.02ÃÊ ¸¶´Ù 4+(0~2)¿òÁ÷ÀÌ°Ô ÇÔ
+		this.x -=4+move;//0.02ì´ˆ ë§ˆë‹¤ 4+(0~2)ì›€ì§ì´ê²Œ í•¨
 	}
 
 	public int getX() {
