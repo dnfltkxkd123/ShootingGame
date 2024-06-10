@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -9,12 +9,12 @@ import javax.swing.ImageIcon;
 public class Missile{
 	
 	
-	Point pos;//¹Ì»çÀÏ ÁÂÇ¥ º¯¼ö
-	private int move;//»óÁßÇÏ À§Ä¡ÀÇ ¹Ì»çÀÏÀÇ ¼³Á¤À» À§ÇÑ º¯¼ö
-	Image img = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ¼öÁ¤\\missile-hi-iloveimg-resizedR.png").getImage();//¹Ì»çÀÏÀÇ ÀÌ¹ÌÁö
+	Point pos;//ë¯¸ì‚¬ì¼ ì¢Œí‘œ ë³€ìˆ˜
+	private int move;//ìƒì¤‘í•˜ ìœ„ì¹˜ì˜ ë¯¸ì‚¬ì¼ì˜ ì„¤ì •ì„ ìœ„í•œ ë³€ìˆ˜
+	Image img = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„ìˆ˜ì •\\missile-hi-iloveimg-resizedR.png").getImage();//ë¯¸ì‚¬ì¼ì˜ ì´ë¯¸ì§€
 	
 	Missile(int x, int y,int move){
-		pos = new Point(x,y+30);//¹Ì»çÀÏÀÇ Ã³À½À§Ä¡ ¼³Á¤
+		pos = new Point(x,y+30);//ë¯¸ì‚¬ì¼ì˜ ì²˜ìŒìœ„ì¹˜ ì„¤ì •
 		this.move = move;
 	}
 	
@@ -23,14 +23,14 @@ public class Missile{
 		if(move==0) {
 			pos.x += 15;
 			pos.y -=2;
-		}//moveÀÇ °ªÀÌ 0ÀÎ MissileÀº 0.02ÃÊ´ç xÃàÀ¸·Î+15 yÃàÀ¸·Î-2¸¸Å­ ¤·ÀÌµ¿
+		}//moveì˜ ê°’ì´ 0ì¸ Missileì€ 0.02ì´ˆë‹¹ xì¶•ìœ¼ë¡œ+15 yì¶•ìœ¼ë¡œ-2ë§Œí¼ ã…‡ì´ë™
 		else if(move==1) {
 			pos.x += 15;
-		}//moveÀÇ °ªÀÌ 1ÀÎ MissileÀº 0.02ÃÊ´ç xÃàÀ¸·Î+15 yÃàÀ¸·Î 0¸¸Å­ ÀÌµ¿
+		}//moveì˜ ê°’ì´ 1ì¸ Missileì€ 0.02ì´ˆë‹¹ xì¶•ìœ¼ë¡œ+15 yì¶•ìœ¼ë¡œ 0ë§Œí¼ ì´ë™
 		else if(move==2) {
 			pos.x += 15;
 			pos.y +=2;
-		}//moveÀÇ °ªÀÌ 2ÀÎ MissileÀº 0.02ÃÊ´ç xÃàÀ¸·Î+15 yÃàÀ¸·Î +2¸¸Å­ ÀÌµ¿
+		}//moveì˜ ê°’ì´ 2ì¸ Missileì€ 0.02ì´ˆë‹¹ xì¶•ìœ¼ë¡œ+15 yì¶•ìœ¼ë¡œ +2ë§Œí¼ ì´ë™
 		*/
 		pos.x += 15;
 	}
@@ -41,7 +41,7 @@ public class Missile{
 	
 	public void missileDraw(Graphics g) {
 		g.drawImage(img, pos.x+10 , pos.y , null);
-	}//¹Ì»çÀÏÀ» ±×·ÁÁÖ´Â ¸Ş¼Òµå
+	}//ë¯¸ì‚¬ì¼ì„ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 
 	
 

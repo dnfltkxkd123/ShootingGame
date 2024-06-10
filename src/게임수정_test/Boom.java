@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -8,33 +8,33 @@ import javax.swing.ImageIcon;
 
 public class Boom{
 	Graphics g;
-	Image img1 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ\\boom1.png").getImage();//Ã¹¹øÂ° ÆøÆÄ ÀÌ¹ÌÁö
-	Image img2 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ\\boom2.png").getImage();//µÎ¹øÂ° ÆøÆÄ ÀÌ¹ÌÁö
-	Image img3 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ\\boom3.png").getImage();//¼¼¹øÂ° ÆøÆÄ ÀÌ¹ÌÁö
-	int x;//ÆøÆÄ ÀÌ¹ÌÁöÀÇ xÃàÀÇ À§Ä¡
-	int y;//ÆøÆÄ ÀÌ¹ÌÁöÀÇ yÃàÀÇ À§Ä¡
-	int time=0;//ÆøÆÄ ÀÌ¹ÌÁö°¡ ½ÇÇà½Ã°£À» ±â·ÏÇÏ¸é º¯¼ö
+	Image img1 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„\\boom1.png").getImage();//ì²«ë²ˆì§¸ í­íŒŒ ì´ë¯¸ì§€
+	Image img2 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„\\boom2.png").getImage();//ë‘ë²ˆì§¸ í­íŒŒ ì´ë¯¸ì§€
+	Image img3 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„\\boom3.png").getImage();//ì„¸ë²ˆì§¸ í­íŒŒ ì´ë¯¸ì§€
+	int x;//í­íŒŒ ì´ë¯¸ì§€ì˜ xì¶•ì˜ ìœ„ì¹˜
+	int y;//í­íŒŒ ì´ë¯¸ì§€ì˜ yì¶•ì˜ ìœ„ì¹˜
+	int time=0;//í­íŒŒ ì´ë¯¸ì§€ê°€ ì‹¤í–‰ì‹œê°„ì„ ê¸°ë¡í•˜ë©´ ë³€ìˆ˜
 	Point point;
 	
 	Boom(int x , int y) {
 		this.x = x;
 		this.y = y;
-	}//Ç¥ÀûÀÌ ÆøÆÄÀÌ¹ÌÁöÀÇ À§Ä¡¸¦ ´ã¾ÆÁÖ´Â »ı¼ºÀÚ
+	}//í‘œì ì´ í­íŒŒì´ë¯¸ì§€ì˜ ìœ„ì¹˜ë¥¼ ë‹´ì•„ì£¼ëŠ” ìƒì„±ì
 	
 	Boom(){
 		
-	}//³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼ÀÇ ÆøÆÄÀÌ¹ÌÁö¸¦ GameFrameÀÇ exposuredList¿¡ ´ã¾ÆÁÙ Boom°´Ã¼¸¦ ÀÎ½ºÅÏ½ºÇÏ´Â »ı¼ºÀÚ
+	}//ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´ì˜ í­íŒŒì´ë¯¸ì§€ë¥¼ GameFrameì˜ exposuredListì— ë‹´ì•„ì¤„ Boomê°ì²´ë¥¼ ì¸ìŠ¤í„´ìŠ¤í•˜ëŠ” ìƒì„±ì
 	
-	public void boom(Graphics g) {//GameFrameÀÇ Paint(Graphics g)´Â 1ÃÊ´ç 1000¹ø ÀÌ¹ÌÁö¸¦ Ãâ·ÂÇÏ±â ¶§¹®¿¡ timeÀº 1ÃÊ´ç +1000ÀÌµÈ´Ù
+	public void boom(Graphics g) {//GameFrameì˜ Paint(Graphics g)ëŠ” 1ì´ˆë‹¹ 1000ë²ˆ ì´ë¯¸ì§€ë¥¼ ì¶œë ¥í•˜ê¸° ë•Œë¬¸ì— timeì€ 1ì´ˆë‹¹ +1000ì´ëœë‹¤
 		
-		if(time<150) {//½ÇÇà½Ã°£ÀÌ 0.15ÃÊ±îÁö Ã¹¹øÂ° ÀÌ¹ÌÁö Ãâ·Â
+		if(time<150) {//ì‹¤í–‰ì‹œê°„ì´ 0.15ì´ˆê¹Œì§€ ì²«ë²ˆì§¸ ì´ë¯¸ì§€ ì¶œë ¥
 			g.drawImage(img1,x,y,null);
-		}else if(time<300){//½ÇÇà½Ã°£ÀÌ 0.30ÃÊ±îÁö µÎ¹øÂ° ÀÌ¹ÌÁö Ãâ·Â
+		}else if(time<300){//ì‹¤í–‰ì‹œê°„ì´ 0.30ì´ˆê¹Œì§€ ë‘ë²ˆì§¸ ì´ë¯¸ì§€ ì¶œë ¥
 			g.drawImage(img2,x,y,null);
-		}else if(time<450) {//½ÇÇà½Ã°£ÀÌ 0.45ÃÊ±îÁö ¼¼¹øÂ° ÀÌ¹ÌÁö Ãâ·Â
+		}else if(time<450) {//ì‹¤í–‰ì‹œê°„ì´ 0.45ì´ˆê¹Œì§€ ì„¸ë²ˆì§¸ ì´ë¯¸ì§€ ì¶œë ¥
 			g.drawImage(img3,x,y,null);
 		}
-	}//Ç¥ÀûÀÇ ÆøÆÄ ÀÌ¹ÌÁö¸¦ ±×·ÁÁÖ´Â ¸Ş¼Òµå
+	}//í‘œì ì˜ í­íŒŒ ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	
 	
 	public void exposured(Graphics g) {
@@ -42,13 +42,13 @@ public class Boom{
 		if(time<200) {
 			g.drawImage(img1,Main.x,Main.y,null);
 			//System.out.println(time);
-		}//0.2ÃÊ Ã¹¹øÂ° ÀÌ¹ÌÁö Ãâ·Â
-	}//ÇÃ·¹ÀÌ¾îÀÇ ±âÃ¼°¡ ÆøÆÄÇÏ´Â ÀÌº¥Æ®¸¦ ±×·ÁÁÖ´Â ¸Ş¼Òµå
+		}//0.2ì´ˆ ì²«ë²ˆì§¸ ì´ë¯¸ì§€ ì¶œë ¥
+	}//í”Œë ˆì´ì–´ì˜ ê¸°ì²´ê°€ í­íŒŒí•˜ëŠ” ì´ë²¤íŠ¸ë¥¼ ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	
 	
 	public int getTime() {
 		return time;
-	}//Boom Å¬·¡½ºÀÇ ½ÇÇà½Ã°£À» ¾Ë·ÁÁÖ´Â ¸Ş¼Òµå
+	}//Boom í´ë˜ìŠ¤ì˜ ì‹¤í–‰ì‹œê°„ì„ ì•Œë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 
 	public void setTime(int time) {
 		this.time = +time;

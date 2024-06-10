@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -24,10 +24,10 @@ public class Stop extends JFrame implements ActionListener{
 	private DefaultTableModel model;//
 	private JTable jTable;//
 	private JScrollPane scroll;//
-	private JButton btnInsert = new JButton("Á¡¼öµî·Ï");//Á¡¼öµî·Ï¹öÆ°
-	private JButton btnClose = new JButton("Á¾·á");//Á¾·á¹öÆ°
-	private JTextField text = new JTextField(10);//Á¡¼öÀÔ·Â ÅØ½ºÆ®ÇÊµå
-	private JButton btnRestart = new JButton("´Ù½ÃÇÏ±â");//´Ù½Ã½ÃÀÛ ¹öÆ°
+	private JButton btnInsert = new JButton("ì ìˆ˜ë“±ë¡");//ì ìˆ˜ë“±ë¡ë²„íŠ¼
+	private JButton btnClose = new JButton("ì¢…ë£Œ");//ì¢…ë£Œë²„íŠ¼
+	private JTextField text = new JTextField(10);//ì ìˆ˜ì…ë ¥ í…ìŠ¤íŠ¸í•„ë“œ
+	private JButton btnRestart = new JButton("ë‹¤ì‹œí•˜ê¸°");//ë‹¤ì‹œì‹œì‘ ë²„íŠ¼
 	
 	
 	public Stop() {
@@ -39,7 +39,7 @@ public class Stop extends JFrame implements ActionListener{
 		setSize(470,550);
 		//setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Á×À½ ¤µ¤¡ Á¡¼ö ÀÔ·Â °¡´É¿ä!");
+		setTitle("ì£½ìŒ ã……ã„± ì ìˆ˜ ì…ë ¥ ê°€ëŠ¥ìš”!");
 		
 
 		
@@ -47,74 +47,74 @@ public class Stop extends JFrame implements ActionListener{
 	}
 	
 	public void createUI() {
-		DAO dao = new DAO();//DB¿¡¼­ µ¥ÀÌÅÍ¸¦ °¡Á®¿Ã °´Ã¼
-		Vector v = dao.getMemberList();//DB¿¡¼­ Á¡¼ö±â·ÏÀÚÀÇ ÀÌ¸§°ú Á¡¼ö¸¦ ¹Ş¾Æ¿È
-		model = new DefaultTableModel(v,col());//Å×ÀÌºí¾È¿¡ µ¥ÀÌÅÍ¸¦ ³ÖÀ½
+		DAO dao = new DAO();//DBì—ì„œ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¬ ê°ì²´
+		Vector v = dao.getMemberList();//DBì—ì„œ ì ìˆ˜ê¸°ë¡ìì˜ ì´ë¦„ê³¼ ì ìˆ˜ë¥¼ ë°›ì•„ì˜´
+		model = new DefaultTableModel(v,col());//í…Œì´ë¸”ì•ˆì— ë°ì´í„°ë¥¼ ë„£ìŒ
 		jTable = new JTable(model);//
 		scroll = new JScrollPane(jTable);//
-		add(scroll,BorderLayout.SOUTH);//Å×ÀÌºíÀ» °¡Àå¹Ø¿¡ ³ÖÀ½
+		add(scroll,BorderLayout.SOUTH);//í…Œì´ë¸”ì„ ê°€ì¥ë°‘ì— ë„£ìŒ
 	}
 	
 	public void reJTable() {
-		DAO dao = new DAO();//DB¿¡¼­ µ¥ÀÌÅÍ¸¦ °¡Á®¿Ã °´Ã¼
-        DefaultTableModel model= new DefaultTableModel(dao.getMemberList()/*DB¿¡¼­ Á¡¼ö±â·ÏÀÚÀÇ ÀÌ¸§°ú Á¡¼ö¸¦ ¹Ş¾Æ¿È*/, col());//Å×ÀÌºí¾È¿¡ µ¥ÀÌÅÍ¸¦ ³ÖÀ½
-        jTable.setModel(model);//Å×ÀÌºí¿¡À» modelÀÇ °ªÀ¸·Î °»½Å
-        text.setEnabled(false);//ÅØ½ºÆ®ÇÊµå ºñÈ°¼ºÈ­
-        btnInsert.setEnabled(false);//ÀÔ·Â¹öÆ° ºñÈ°¼ºÈ­
-	}//»õ·Î¿î ±â·ÏÀ» ³ÖÀ»¶§ ½ÇÇàµÇ´Â ¸Ş¼Òµå
+		DAO dao = new DAO();//DBì—ì„œ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¬ ê°ì²´
+        DefaultTableModel model= new DefaultTableModel(dao.getMemberList()/*DBì—ì„œ ì ìˆ˜ê¸°ë¡ìì˜ ì´ë¦„ê³¼ ì ìˆ˜ë¥¼ ë°›ì•„ì˜´*/, col());//í…Œì´ë¸”ì•ˆì— ë°ì´í„°ë¥¼ ë„£ìŒ
+        jTable.setModel(model);//í…Œì´ë¸”ì—ì„ modelì˜ ê°’ìœ¼ë¡œ ê°±ì‹ 
+        text.setEnabled(false);//í…ìŠ¤íŠ¸í•„ë“œ ë¹„í™œì„±í™”
+        btnInsert.setEnabled(false);//ì…ë ¥ë²„íŠ¼ ë¹„í™œì„±í™”
+	}//ìƒˆë¡œìš´ ê¸°ë¡ì„ ë„£ì„ë•Œ ì‹¤í–‰ë˜ëŠ” ë©”ì†Œë“œ
 	
 	public void score() {
-		JLabel label = new JLabel("Á¡¼ö :   " + GameFrame.myScore);//Á¡¼ö¸¦ º¸¿©ÁÖ´Â JLabel
-		label.setFont(new Font(null,Font.BOLD,30));//±ÛÀÚÀÇ ±½±â Å©±â ¼³Á¤
-		label.setHorizontalAlignment(JLabel.CENTER);//±ÛÀÚ°¡ Áß¾Ó¿¡ ³ª¿À°ÔÇÔ
+		JLabel label = new JLabel("ì ìˆ˜ :   " + GameFrame.myScore);//ì ìˆ˜ë¥¼ ë³´ì—¬ì£¼ëŠ” JLabel
+		label.setFont(new Font(null,Font.BOLD,30));//ê¸€ìì˜ êµµê¸° í¬ê¸° ì„¤ì •
+		label.setHorizontalAlignment(JLabel.CENTER);//ê¸€ìê°€ ì¤‘ì•™ì— ë‚˜ì˜¤ê²Œí•¨
 		//label.setSize(100,100);
-		JPanel panel = new JPanel();//labelÀÇ Á¤º¸¸¦ ´ãÀ» JPanel»ı¼º
-		panel.add(label);//panel¿¡ label Ãß°¡
-		add(panel,BorderLayout.CENTER);//Á¡¼öÃ¢(panel)À» Áß¾Ó¿¡ Ãâ·Â
-	}//ÇÃ·¹ÀÌ¾îÀÇ Á¡¼ö¸¦ ¾Ë·ÁÁÖ´Â ¸Ş¼Òµå
+		JPanel panel = new JPanel();//labelì˜ ì •ë³´ë¥¼ ë‹´ì„ JPanelìƒì„±
+		panel.add(label);//panelì— label ì¶”ê°€
+		add(panel,BorderLayout.CENTER);//ì ìˆ˜ì°½(panel)ì„ ì¤‘ì•™ì— ì¶œë ¥
+	}//í”Œë ˆì´ì–´ì˜ ì ìˆ˜ë¥¼ ì•Œë ¤ì£¼ëŠ” ë©”ì†Œë“œ
 	
 	public void button() {
-		JLabel label = new JLabel("ÀÌ¸§Àû±â : ");
+		JLabel label = new JLabel("ì´ë¦„ì ê¸° : ");
 
-		btnInsert.addActionListener(this);//¸®½º³Êµî·Ï
-		btnRestart.addActionListener(this);//¸®½º³Êµî·Ï
-		JPanel panel = new JPanel();//¹öÆ°ÀÇ Á¤º¸¸¦ ´ãÀ» JPanel»ı¼º
-		panel.add(label);//panel¿¡ labelÃß°¡
-		panel.add(text);//panel¿¡ ÅØ½ºÆ®ÇÊµå Ãß°¡ Ãß°¡
-		panel.add(btnInsert);//panel¿¡ ÀÔ·Â¹öÆ° Ãß°¡
-		panel.add(btnRestart);//panel¿¡ ´Ù½Ã½ÃÀÛ¹öÆ° Ãß°¡
+		btnInsert.addActionListener(this);//ë¦¬ìŠ¤ë„ˆë“±ë¡
+		btnRestart.addActionListener(this);//ë¦¬ìŠ¤ë„ˆë“±ë¡
+		JPanel panel = new JPanel();//ë²„íŠ¼ì˜ ì •ë³´ë¥¼ ë‹´ì„ JPanelìƒì„±
+		panel.add(label);//panelì— labelì¶”ê°€
+		panel.add(text);//panelì— í…ìŠ¤íŠ¸í•„ë“œ ì¶”ê°€ ì¶”ê°€
+		panel.add(btnInsert);//panelì— ì…ë ¥ë²„íŠ¼ ì¶”ê°€
+		panel.add(btnRestart);//panelì— ë‹¤ì‹œì‹œì‘ë²„íŠ¼ ì¶”ê°€
 		//panel.add(btnClose);
-		add(panel,BorderLayout.NORTH);//panelÀ§Ä¡¸¦ ¸ÇÀ§·Î ¼³Á¤
-	}//´Ù½Ã½ÃÀÛ ¹öÆ°°ú ÀÔ·Â¹öÆ°ÀÇ Á¤º¸¸¦ ´ã´Â ¸Ş¼Òµå
+		add(panel,BorderLayout.NORTH);//panelìœ„ì¹˜ë¥¼ ë§¨ìœ„ë¡œ ì„¤ì •
+	}//ë‹¤ì‹œì‹œì‘ ë²„íŠ¼ê³¼ ì…ë ¥ë²„íŠ¼ì˜ ì •ë³´ë¥¼ ë‹´ëŠ” ë©”ì†Œë“œ
 	
 	public Vector col() {
-		Vector col = new Vector();//È­¸é¿¡ º¸¿©ÁÙ Ä®·³ÀÇ ³»¿ëÀ» ÀúÀåÇÒ Vector
-		String id = "ÇÃ·¹ÀÌ¾î";//Ä®·³1
-		String score = "Á¡¼ö";//Ä®·³2
-		col.add(id);//col¿¡ Ä®·³1¸¦ Ãß°¡
-		col.add(score);//col¿¡ Ä®·³2¸¦ Ãß°¡
-		return col;//col¹İÈ¯
+		Vector col = new Vector();//í™”ë©´ì— ë³´ì—¬ì¤„ ì¹¼ëŸ¼ì˜ ë‚´ìš©ì„ ì €ì¥í•  Vector
+		String id = "í”Œë ˆì´ì–´";//ì¹¼ëŸ¼1
+		String score = "ì ìˆ˜";//ì¹¼ëŸ¼2
+		col.add(id);//colì— ì¹¼ëŸ¼1ë¥¼ ì¶”ê°€
+		col.add(score);//colì— ì¹¼ëŸ¼2ë¥¼ ì¶”ê°€
+		return col;//colë°˜í™˜
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == btnInsert) {//Å¬¸¯À» ÇßÀ»¶§ ÀÔ·Â¹öÆ°ÀÌ¸é ½ÇÇà
-			String player = text.getText();//ÇÃ·¹ÀÌ¾îÀÇ ÀÌ¸§À» ÀúÀå
-			String sroce = Integer.toString(GameFrame.myScore);//ÇÃ·¹ÀÌ¾îÀÇ Á¡¼ö¸¦ ÀúÀå
+		if(e.getSource() == btnInsert) {//í´ë¦­ì„ í–ˆì„ë•Œ ì…ë ¥ë²„íŠ¼ì´ë©´ ì‹¤í–‰
+			String player = text.getText();//í”Œë ˆì´ì–´ì˜ ì´ë¦„ì„ ì €ì¥
+			String sroce = Integer.toString(GameFrame.myScore);//í”Œë ˆì´ì–´ì˜ ì ìˆ˜ë¥¼ ì €ì¥
 			DAO dao = new DAO();
-			if(player==null) {//¾Æ¹«°Íµµ ÀÔ·Â ¾ÈÇÏ¸é ½ÇÇà
-				System.out.println("ÀÌ¸§À» ÀÔ·Â ¾ÈÇß½À´Ï´Ù!!");//
-				return;//Á¾·á
+			if(player==null) {//ì•„ë¬´ê²ƒë„ ì…ë ¥ ì•ˆí•˜ë©´ ì‹¤í–‰
+				System.out.println("ì´ë¦„ì„ ì…ë ¥ ì•ˆí–ˆìŠµë‹ˆë‹¤!!");//
+				return;//ì¢…ë£Œ
 			}
 			else {
 				boolean ok = dao.insertData(player,sroce);
 				if(ok) {
 					reJTable();
 					text.setText("");
-					JOptionPane.showMessageDialog(this, "µî·Ï¿Ï·á");
+					JOptionPane.showMessageDialog(this, "ë“±ë¡ì™„ë£Œ");
 					
 				}else {
-					JOptionPane.showMessageDialog(this, "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä!");
+					JOptionPane.showMessageDialog(this, "ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”!");
 				}
 			}
 		}else if(e.getSource() == btnClose){

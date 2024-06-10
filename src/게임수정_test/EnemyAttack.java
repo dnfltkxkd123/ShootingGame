@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -6,10 +6,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class EnemyAttack{
-	private int move = (int)(Math.random()*3);//Ç¥ÀûÀÇ ¹Ì»çÀÏÀÌ ÃÖ¼Ò 0~3 ÀÇ ¼Óµµ·Î ÀÌµ¿ÇÏ°Ô ÇÏ´Â º¯¼ö
-	private int x;//Ç¥ÀûÀÇ ¹Ì»çÀÏÀÇ x ÃàÀÇ À§Ä¡
-	private int y;//Ç¥ÀûÀÇ ¹Ì»çÀÏÀÇ y ÃàÀÇ À§Ä¡
-	Image missile = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ\\missile-hi-iloveimg-resized.png").getImage();//Ç¥ÀûÀÇ ¹Ì»çÀÏÀÇ ÀÌ¹ÌÁö
+	private int move = (int)(Math.random()*3);//í‘œì ì˜ ë¯¸ì‚¬ì¼ì´ ìµœì†Œ 0~3 ì˜ ì†ë„ë¡œ ì´ë™í•˜ê²Œ í•˜ëŠ” ë³€ìˆ˜
+	private int x;//í‘œì ì˜ ë¯¸ì‚¬ì¼ì˜ x ì¶•ì˜ ìœ„ì¹˜
+	private int y;//í‘œì ì˜ ë¯¸ì‚¬ì¼ì˜ y ì¶•ì˜ ìœ„ì¹˜
+	Image missile = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„\\missile-hi-iloveimg-resized.png").getImage();//í‘œì ì˜ ë¯¸ì‚¬ì¼ì˜ ì´ë¯¸ì§€
 	
 	EnemyAttack(int x,int y){
 		this.x =x;
@@ -18,15 +18,15 @@ public class EnemyAttack{
 	
 	public void missileDraw(Graphics g) {
 		g.drawImage(missile, x ,y+10,null );
-	}//Ç¥ÀûÀÇ ¹Ì»çÀÏÀ» ±×·ÁÁÖ°Ô ÇÔ
+	}//í‘œì ì˜ ë¯¸ì‚¬ì¼ì„ ê·¸ë ¤ì£¼ê²Œ í•¨
 	
 	public void move() {
 			x -= move+6;
-	}//Ç¥ÀûÀÇ ¹Ì»çÀÏÀÌ 6~9ÀÇ ¼Óµµ·Î ÀÌµ¿ÇÏ°Ô ÇÔ
+	}//í‘œì ì˜ ë¯¸ì‚¬ì¼ì´ 6~9ì˜ ì†ë„ë¡œ ì´ë™í•˜ê²Œ í•¨
 	
 	public int getX() {
 		return x;
-	}//Ç¥ÀûÀÇ xÃàÀÇ À§Ä¡¸¦ ¹İÈ¯
+	}//í‘œì ì˜ xì¶•ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜
 
 	public void setX(int x) {
 		this.x = x;
@@ -34,7 +34,7 @@ public class EnemyAttack{
 
 	public int getY() {
 		return y;
-	}//Ç¥ÀûÀÇ yÃàÀÇ À§Ä¡¸¦ ¹İÈ¯
+	}//í‘œì ì˜ yì¶•ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜
 
 	public void setY(int y) {
 		this.y = y;
@@ -43,6 +43,6 @@ public class EnemyAttack{
 
 	public void enemyAttackEvent() {
 			move();
-	}//Ç¥ÀûÀÇ ¹Ì»çÀÏ ÀÌº¥Æ®¸¦ ½ÇÇà ÇØÁÖ´Â ¸Ş¼Òµå
+	}//í‘œì ì˜ ë¯¸ì‚¬ì¼ ì´ë²¤íŠ¸ë¥¼ ì‹¤í–‰ í•´ì£¼ëŠ” ë©”ì†Œë“œ
 
 }

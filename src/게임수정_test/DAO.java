@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.util.Vector;
 
 public class DAO {
-	private final String DRIVE = "oracle.jdbc.driver.OracleDriver"; //DBµå¶óÀÌ¹ö ÁÖ¼Ò
-	private final String URL = "jdbc:oracle:thin:@localhost:1522:XE"; // URLÁÖ¼Ò
+	private final String DRIVE = "oracle.jdbc.driver.OracleDriver"; //DBë“œë¼ì´ë²„ ì£¼ì†Œ
+	private final String URL = "jdbc:oracle:thin:@localhost:1522:XE"; // URLì£¼ì†Œ
 	private final String ID = "s1701281"; // ID
 	private final String PWD = "p1701281"; //PWD
 	
@@ -16,41 +16,41 @@ public class DAO {
 	public Connection getConn() {
 		Connection con = null;
         try {
-            Class.forName(DRIVE); //1. µå¶óÀÌ¹ö ·Îµù
-            con = DriverManager.getConnection(URL,ID,PWD); //2. µå¶óÀÌ¹ö ¿¬°á
-            System.out.println("Á¢¼Ó¼º°ø");//Á¢¼Ó ¼º°ø ¹®±¸
+            Class.forName(DRIVE); //1. ë“œë¼ì´ë²„ ë¡œë”©
+            con = DriverManager.getConnection(URL,ID,PWD); //2. ë“œë¼ì´ë²„ ì—°ê²°
+            System.out.println("ì ‘ì†ì„±ê³µ");//ì ‘ì† ì„±ê³µ ë¬¸êµ¬
         } catch (Exception e) {
-        	System.out.println("Á¢¼Ó½ÇÆĞ");//Á¢¼Ó ½ÇÆĞ ¹®±¸
+        	System.out.println("ì ‘ì†ì‹¤íŒ¨");//ì ‘ì† ì‹¤íŒ¨ ë¬¸êµ¬
             System.out.println(e.getMessage());
         }
        
         return con;
-	}//db¿¡ Á¢¼ÓÇÏ´Â ¸Ş¼Òµå
+	}//dbì— ì ‘ì†í•˜ëŠ” ë©”ì†Œë“œ
 	
-	public boolean insertData(String name/*±â·Ï µî·ÏÀÚÀÇ ÀÌ¸§À» ¹Ş´Â ¸Å°³º¯¼ö*/, String score/*±â·Ï µî·ÏÀÚÀÇ Á¡¼ö¸¦ ¹Ş´Â ¸Å°³º¯¼ö*/) {
-		boolean ok = false;//±â·Ï Ãß°¡ÀÇ ½ÇÆĞ¿Í ¼º°øÀ» ¾Ë·ÁÁÖ´Â °ª
+	public boolean insertData(String name/*ê¸°ë¡ ë“±ë¡ìì˜ ì´ë¦„ì„ ë°›ëŠ” ë§¤ê°œë³€ìˆ˜*/, String score/*ê¸°ë¡ ë“±ë¡ìì˜ ì ìˆ˜ë¥¼ ë°›ëŠ” ë§¤ê°œë³€ìˆ˜*/) {
+		boolean ok = false;//ê¸°ë¡ ì¶”ê°€ì˜ ì‹¤íŒ¨ì™€ ì„±ê³µì„ ì•Œë ¤ì£¼ëŠ” ê°’
 		Connection con = null;
 		String sql = "insert into game_score(" +
                 "name,score" +
                 ") "+
-                "values(?,?)";//DB¿¡¼­ °¡Á®¿Ã µ¥ÀÌÅÍ¸¦ Å×ÀÌºí·Î Ç¥Çö ÇØÁÖ´Â ¸í·É¾î
-		PreparedStatement ps = null;//DB¿¡¼­  sql°ªÀ» ½ÇÇà½ÃÄÑÁÙ¼ö ÀÖµµ·Ï µµ¿ÍÁÖ´Â º¯¼ö
-		int r = 0;//±â·Ï Ãß°¡ÀÇ ½ÇÆĞ ¶Ç´Â ¼º°ø ÇßÀ»¶§ ¹İÈ¯µÇ´Â °ªÀ» ¹Ş¾ÆÁÖ´Â º¯¼ö
+                "values(?,?)";//DBì—ì„œ ê°€ì ¸ì˜¬ ë°ì´í„°ë¥¼ í…Œì´ë¸”ë¡œ í‘œí˜„ í•´ì£¼ëŠ” ëª…ë ¹ì–´
+		PreparedStatement ps = null;//DBì—ì„œ  sqlê°’ì„ ì‹¤í–‰ì‹œì¼œì¤„ìˆ˜ ìˆë„ë¡ ë„ì™€ì£¼ëŠ” ë³€ìˆ˜
+		int r = 0;//ê¸°ë¡ ì¶”ê°€ì˜ ì‹¤íŒ¨ ë˜ëŠ” ì„±ê³µ í–ˆì„ë•Œ ë°˜í™˜ë˜ëŠ” ê°’ì„ ë°›ì•„ì£¼ëŠ” ë³€ìˆ˜
 		try {
-			con = getConn();//DBÁ¢¼Ó
-			ps = con.prepareStatement(sql);//DB¿¡ ½ÇÇàÇÒ ¸í·É¾î µî·Ï
-			ps.setString(1, name);//Ã¹¹øÂ° ?°ªÀ» nameÀ¸·Î ¼öÁ¤
-			ps.setString(2, score);//µÎ¹øÂ° ?°ªÀ» scoreÀ¸·Î ¼öÁ¤
-			r = ps.executeUpdate();//¸í·É¾î ½ÇÇà
+			con = getConn();//DBì ‘ì†
+			ps = con.prepareStatement(sql);//DBì— ì‹¤í–‰í•  ëª…ë ¹ì–´ ë“±ë¡
+			ps.setString(1, name);//ì²«ë²ˆì§¸ ?ê°’ì„ nameìœ¼ë¡œ ìˆ˜ì •
+			ps.setString(2, score);//ë‘ë²ˆì§¸ ?ê°’ì„ scoreìœ¼ë¡œ ìˆ˜ì •
+			r = ps.executeUpdate();//ëª…ë ¹ì–´ ì‹¤í–‰
 			if(r>0) {
-				System.out.println("µî·Ï¼º°ø");//r==1ÀÌ¸é ½ÇÇà¼º°ø
+				System.out.println("ë“±ë¡ì„±ê³µ");//r==1ì´ë©´ ì‹¤í–‰ì„±ê³µ
 				ok = true;//
 			}else {
-				System.out.println("µî·Ï½ÇÆĞ");//r==0ÀÌ¸é ½ÇÇà ½ÇÆĞ
+				System.out.println("ë“±ë¡ì‹¤íŒ¨");//r==0ì´ë©´ ì‹¤í–‰ ì‹¤íŒ¨
 				ok = false;//
 			}
-			con.close();//Á¢¼Ó Á¾·á
-			ps.close();//Á¢¼Ó Á¾·á
+			con.close();//ì ‘ì† ì¢…ë£Œ
+			ps.close();//ì ‘ì† ì¢…ë£Œ
 		}catch(Exception e) {
 			
 			System.out.println(e.getMessage());
@@ -62,24 +62,24 @@ public class DAO {
 		Connection con = null;
 		String sql = "select name,to_number(SCORE)\r\n" + 
 				"from game_score\r\n" + 
-				"order by to_number(SCORE) desc";//DB¿¡¼­ °¡Á®¿Ã µ¥ÀÌÅÍ¸¦ Å×ÀÌºí·Î Ç¥Çö ÇØÁÖ´Â ¸í·É¾î
-		ResultSet rs = null;//DB¿¡¼­ ¸í·É¾î(sql)¸¦ ½ÇÇà ÇÒ¼ö ÀÖ°Ô ÇØÁÖ´Â º¯¼ö
-		PreparedStatement ps = null;//DB¿¡¼­  sql°ªÀ» ½ÇÇà½ÃÄÑÁÙ¼ö ÀÖµµ·Ï µµ¿ÍÁÖ´Â º¯¼ö
-		Vector v = new Vector();//È­¸é¿¡ º¸¿©ÁÙ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â Vector
+				"order by to_number(SCORE) desc";//DBì—ì„œ ê°€ì ¸ì˜¬ ë°ì´í„°ë¥¼ í…Œì´ë¸”ë¡œ í‘œí˜„ í•´ì£¼ëŠ” ëª…ë ¹ì–´
+		ResultSet rs = null;//DBì—ì„œ ëª…ë ¹ì–´(sql)ë¥¼ ì‹¤í–‰ í• ìˆ˜ ìˆê²Œ í•´ì£¼ëŠ” ë³€ìˆ˜
+		PreparedStatement ps = null;//DBì—ì„œ  sqlê°’ì„ ì‹¤í–‰ì‹œì¼œì¤„ìˆ˜ ìˆë„ë¡ ë„ì™€ì£¼ëŠ” ë³€ìˆ˜
+		Vector v = new Vector();//í™”ë©´ì— ë³´ì—¬ì¤„ ë°ì´í„°ë¥¼ ì €ì¥í•˜ëŠ” Vector
         try {
-        	con = getConn();//DB¿¡ Á¢¼Ó
-        	ps = con.prepareStatement(sql);//DB¿¡ ½ÇÇàÇÒ ¸í·É¾î µî·Ï
-        	rs = ps.executeQuery();//DB¿¡¼­ ¸í·É¾î(sql)¸¦ ½ÇÇà
-        	while(rs.next()) {//v°¡ ¸ğµç ÇàÀÇ °ªÀ» ¹ŞÀ»¶§±îÁö ¹İº¹
-        		Vector row = new Vector();//v¿¡ µ¥ÀÌÅÍ¸¦ ¿Å±æ Vector
-        		row.add(rs.getString("name"));//name Ä®·³ÀÇ °ªÀ» row¿¡ ÀúÀå
-        		row.add(rs.getInt("to_number(SCORE)"));//to_number(SCORE) Ä®·³ÀÇ °ªÀ» row¿¡ ÀúÀå
-        		v.add(row);//ÇàÀ» v¿¡ Ãß°¡
+        	con = getConn();//DBì— ì ‘ì†
+        	ps = con.prepareStatement(sql);//DBì— ì‹¤í–‰í•  ëª…ë ¹ì–´ ë“±ë¡
+        	rs = ps.executeQuery();//DBì—ì„œ ëª…ë ¹ì–´(sql)ë¥¼ ì‹¤í–‰
+        	while(rs.next()) {//vê°€ ëª¨ë“  í–‰ì˜ ê°’ì„ ë°›ì„ë•Œê¹Œì§€ ë°˜ë³µ
+        		Vector row = new Vector();//vì— ë°ì´í„°ë¥¼ ì˜®ê¸¸ Vector
+        		row.add(rs.getString("name"));//name ì¹¼ëŸ¼ì˜ ê°’ì„ rowì— ì €ì¥
+        		row.add(rs.getInt("to_number(SCORE)"));//to_number(SCORE) ì¹¼ëŸ¼ì˜ ê°’ì„ rowì— ì €ì¥
+        		v.add(row);//í–‰ì„ vì— ì¶”ê°€
         	}
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-        return v;//Á¡¼ö È­¸é¿¡ º¸¿©ÁÙ µ¥ÀÌÅÍ¸¦ ¹İÈ¯
+        return v;//ì ìˆ˜ í™”ë©´ì— ë³´ì—¬ì¤„ ë°ì´í„°ë¥¼ ë°˜í™˜
 	}
 
 }

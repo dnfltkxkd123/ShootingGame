@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,29 +15,29 @@ import javafx.scene.paint.Color;
 public class GameFrame extends JFrame{
 	
 
-	Image img = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ¼öÁ¤\\missile-hi-iloveimg-resizedR.png").getImage();
-	Image me = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ¼öÁ¤\\µğ¹Ù60x60.png").getImage();//ÇÃ·¹ÀÌ¾î°¡ Á¶ÀÛÇÒ ±âÃ¼ÀÇ ÀÌ¹ÌÁö
-	Image background = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ¼öÁ¤\\¹è°æ2.png").getImage();//¹è°æ ÀÌ¹ÌÁö
+	Image img = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„ìˆ˜ì •\\missile-hi-iloveimg-resizedR.png").getImage();
+	Image me = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„ìˆ˜ì •\\ë””ë°”60x60.png").getImage();//í”Œë ˆì´ì–´ê°€ ì¡°ì‘í•  ê¸°ì²´ì˜ ì´ë¯¸ì§€
+	Image background = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„ìˆ˜ì •\\ë°°ê²½2.png").getImage();//ë°°ê²½ ì´ë¯¸ì§€
 	Image screenImage;//
 	Graphics screenGraphic;//
-	GameThread thr;//°ÔÀÓÀÇ ½º·¹µå
-	static ArrayList<Boom> boomList = new ArrayList<Boom>();//Ç¥ÀûÀÌ ÆøÆÄ ÇÏ´Â ÀÌ¹ÌÁö¸¦ ´ãÀ» ArrayList
-	static ArrayList<Boom> exposuredList = new ArrayList<Boom>();//ÇÃ·¹ÀÌ¾î°¡ ÆøÆÄ ÇÏ´Â ÀÌ¹ÌÁö¸¦ ´ãÀ» ArrayList
-	static int myScore=0;//ÃÊ±âÁ¡¼ö
-	static int myLife=10;//»ı¸íÆ÷ÀÎÆ®
+	GameThread thr;//ê²Œì„ì˜ ìŠ¤ë ˆë“œ
+	static ArrayList<Boom> boomList = new ArrayList<Boom>();//í‘œì ì´ í­íŒŒ í•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ë‹´ì„ ArrayList
+	static ArrayList<Boom> exposuredList = new ArrayList<Boom>();//í”Œë ˆì´ì–´ê°€ í­íŒŒ í•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ë‹´ì„ ArrayList
+	static int myScore=0;//ì´ˆê¸°ì ìˆ˜
+	static int myLife=10;//ìƒëª…í¬ì¸íŠ¸
 	private int exit = 0;
 
 	
 	GameFrame(){
-		setTitle("2ÇĞ³â 1ÇĞ±â °³ÀÎ ÇÁ·ÎÁ§Æ®");
-		setSize(Main.width,Main.height);//guiÀÇ »çÀÌÁî
-		setLocation(Main.f_x,Main.f_y);//guiÀÇ À§Ä¡
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ÀÌ Å¬·¡½ºÀÇ gui¸¦ ´İÀ¸¸é ¸ğµç gui°¡ ´İÈû
-		setResizable(false);//Å©±â Á¶Àı ¸øÇÏ°Ô ÇÔ
-		thr = new GameThread();//°ÔÀÓÀÇ ½º·¹µå¸¦ ´ã´çÇÒ °´Ã¼¸¦ ÀÎ½ºÅÏ½ºÇÔ
-		addKeyListener(Main.key);//Å° ÀÌº¥Æ®¸¦ gui¿¡ µî·ÏÇÔ
-		thr.start();//½º·¹µå¸¦ ½ÇÇà½ÃÅ´
-		setVisible(true);//gui¸¦ º¸ÀÌ°ÔÇÔ
+		setTitle("2í•™ë…„ 1í•™ê¸° ê°œì¸ í”„ë¡œì íŠ¸");
+		setSize(Main.width,Main.height);//guiì˜ ì‚¬ì´ì¦ˆ
+		setLocation(Main.f_x,Main.f_y);//guiì˜ ìœ„ì¹˜
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ì´ í´ë˜ìŠ¤ì˜ guië¥¼ ë‹«ìœ¼ë©´ ëª¨ë“  guiê°€ ë‹«í˜
+		setResizable(false);//í¬ê¸° ì¡°ì ˆ ëª»í•˜ê²Œ í•¨
+		thr = new GameThread();//ê²Œì„ì˜ ìŠ¤ë ˆë“œë¥¼ ë‹´ë‹¹í•  ê°ì²´ë¥¼ ì¸ìŠ¤í„´ìŠ¤í•¨
+		addKeyListener(Main.key);//í‚¤ ì´ë²¤íŠ¸ë¥¼ guiì— ë“±ë¡í•¨
+		thr.start();//ìŠ¤ë ˆë“œë¥¼ ì‹¤í–‰ì‹œí‚´
+		setVisible(true);//guië¥¼ ë³´ì´ê²Œí•¨
 		new Main();
 	}
 	
@@ -45,24 +45,24 @@ public class GameFrame extends JFrame{
 	public void screenDraw(Graphics g) {
 		
 		try {
-			delete(g);//Ç¥ÀûÀ» »èÁ¦½ÃÅ´
+			delete(g);//í‘œì ì„ ì‚­ì œì‹œí‚´
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-		g.drawImage(background,0,0,this);//¹è°æÀ» ±×·ÁÁÜ
+		g.drawImage(background,0,0,this);//ë°°ê²½ì„ ê·¸ë ¤ì¤Œ
 		limitPos();
-		//g.clearRect(0, 0, Main.width, Main.height);// 0,0 ¿¡¼­ À§¿¡¼­ Á¤ÇÑ ÇØ»óµµ Å©±â¸¸Å­ È­¸éÀ» Áö¿ó´Ï´Ù.
-		drawCould(g);//±¸¸§À» ±×¸²
-		g.drawImage(me,Main.x,Main.y,this);//³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼¸¦ ±×·ÁÁÜ
-		MissileDraw(g);//¹Ì»çÀÏÀ» ±×·ÁÁÜ
-		enemyDraw(g);//Ç¥ÀûÀ» ±×·ÁÁÜ
-		boomDraw(g);//Ç¥ ¬ÀÌ ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁÜ
-		exposured(g);//³»°¡ ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁÜ
-		drawString((Graphics2D)g);//ÅØ½ºÆ®¸¦ ±×·ÁÁÜ
+		//g.clearRect(0, 0, Main.width, Main.height);// 0,0 ì—ì„œ ìœ„ì—ì„œ ì •í•œ í•´ìƒë„ í¬ê¸°ë§Œí¼ í™”ë©´ì„ ì§€ì›ë‹ˆë‹¤.
+		drawCould(g);//êµ¬ë¦„ì„ ê·¸ë¦¼
+		g.drawImage(me,Main.x,Main.y,this);//ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´ë¥¼ ê·¸ë ¤ì¤Œ
+		MissileDraw(g);//ë¯¸ì‚¬ì¼ì„ ê·¸ë ¤ì¤Œ
+		enemyDraw(g);//í‘œì ì„ ê·¸ë ¤ì¤Œ
+		boomDraw(g);//í‘œì ¹ì´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤Œ
+		exposured(g);//ë‚´ê°€ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤Œ
+		drawString((Graphics2D)g);//í…ìŠ¤íŠ¸ë¥¼ ê·¸ë ¤ì¤Œ
 		for(int i=0 ; i<Main.attackList.size() ; i++) {
-			Main.attackList.get(i).missileDraw(g);//¹Ì»çÀÏÀ» ±×·ÁÁÜ
+			Main.attackList.get(i).missileDraw(g);//ë¯¸ì‚¬ì¼ì„ ê·¸ë ¤ì¤Œ
 		}
-	}//È­¸é¿¡ ±×·ÁÁú ÀÌº¥Æ®¸¦ ´ã´çÇÏ´Â ¸Ş¼Òµå
+	}//í™”ë©´ì— ê·¸ë ¤ì§ˆ ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ëŠ” ë©”ì†Œë“œ
 	
 	public void limitPos() {
 		if(Main.x<0) {
@@ -78,41 +78,41 @@ public class GameFrame extends JFrame{
 		else if(Main.y>540) {
 			Main.y=540;
 		}
-	}//ÇÃ·¹ÀÌ¾î°¡ Á¶ÀÛÇÏ´Â ±âÃ¼°¡ xÃà ±âÁØ:0~760,yÃà ±âÁØ:20~540±îÁö¸¸ ¿òÁ÷ÀÏ¼ö ÀÖ°ÔÇÔ
+	}//í”Œë ˆì´ì–´ê°€ ì¡°ì‘í•˜ëŠ” ê¸°ì²´ê°€ xì¶• ê¸°ì¤€:0~760,yì¶• ê¸°ì¤€:20~540ê¹Œì§€ë§Œ ì›€ì§ì¼ìˆ˜ ìˆê²Œí•¨
 	
 	
 
 	@Override
 	public void paint(Graphics g) {
-		screenImage = createImage(Main.width,Main.height);//³Êºñ 800,³ôÀÌ 600ÀÇ ºóÀÌ¹ÌÁö(¹éÁö)¸¦ »ı¼º
-		screenGraphic = screenImage.getGraphics();//screenImage¸¦ GraphicsÀ¸·Î ¸¸µë
-		screenGraphic.drawImage(background,0,0,this);//screenImageÀ§¿¡ ¹è°æÀ» ±×¸²
-		screenDraw(screenGraphic);//screenImage(ºó¿©¹é)À» ¾òÀº screenGraphic¸¦ screenDrawÀÇ ¸Å°³º¯¼ö·Î ³ÖÀ½
-		g.drawImage(screenImage,0,0,null);//È­¸é¿¡ screenImage(ºó¿©¹é)¿¡ ±×·ÁÁø ÀÌ¹ÌÁö¸¦ È­¸é¿¡ Ãâ·Â
-		repaint();//0.001ÃÊ ¸¶´Ù »õ·Î ¼³Á¤µÈ ÀÌ¹ÌÁö(screenImage)¸¦ ±×¸²
+		screenImage = createImage(Main.width,Main.height);//ë„ˆë¹„ 800,ë†’ì´ 600ì˜ ë¹ˆì´ë¯¸ì§€(ë°±ì§€)ë¥¼ ìƒì„±
+		screenGraphic = screenImage.getGraphics();//screenImageë¥¼ Graphicsìœ¼ë¡œ ë§Œë“¬
+		screenGraphic.drawImage(background,0,0,this);//screenImageìœ„ì— ë°°ê²½ì„ ê·¸ë¦¼
+		screenDraw(screenGraphic);//screenImage(ë¹ˆì—¬ë°±)ì„ ì–»ì€ screenGraphicë¥¼ screenDrawì˜ ë§¤ê°œë³€ìˆ˜ë¡œ ë„£ìŒ
+		g.drawImage(screenImage,0,0,null);//í™”ë©´ì— screenImage(ë¹ˆì—¬ë°±)ì— ê·¸ë ¤ì§„ ì´ë¯¸ì§€ë¥¼ í™”ë©´ì— ì¶œë ¥
+		repaint();//0.001ì´ˆ ë§ˆë‹¤ ìƒˆë¡œ ì„¤ì •ëœ ì´ë¯¸ì§€(screenImage)ë¥¼ ê·¸ë¦¼
 	}
 	
 	public void MissileDraw(Graphics g) {
-		for(int i=0 ; i<Main.MissileList.size() ; i++) {//Main.MissileListÀÇ ±æÀÌ ¸¸Å­ for¹® ½ÇÇà
+		for(int i=0 ; i<Main.MissileList.size() ; i++) {//Main.MissileListì˜ ê¸¸ì´ ë§Œí¼ forë¬¸ ì‹¤í–‰
 			Main.ms = Main.MissileList.get(i);
 			if(Main.ms.pos.x >800) {
-				Main.MissileList.remove(i);//¹Ì»çÀÏÀÇ xÀ§Ä¡°¡800º¸´Ù Å©¸é ArrayList¿¡¼­ Á¦°Å
+				Main.MissileList.remove(i);//ë¯¸ì‚¬ì¼ì˜ xìœ„ì¹˜ê°€800ë³´ë‹¤ í¬ë©´ ArrayListì—ì„œ ì œê±°
 			}else {
-				Main.ms.missileDraw(g);//¹Ì»çÀÏÀÇ xÀ§Ä¡°¡800ÀÌÇÏ ÀÌ¸é ¹Ì»çÀÏÀ» ±×¸²
+				Main.ms.missileDraw(g);//ë¯¸ì‚¬ì¼ì˜ xìœ„ì¹˜ê°€800ì´í•˜ ì´ë©´ ë¯¸ì‚¬ì¼ì„ ê·¸ë¦¼
 			}
 		}
-	}//ÇÃ·¹ÀÌ¾î°¡ Á¶Á¾ÇÏ´Â ±âÃ¼ÀÇ ¹Ì»çÀÏ ÀÌº¥Æ®¸¦ ´ã´çÇÏ´Â ¸Ş¼Òµå
+	}//í”Œë ˆì´ì–´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´ì˜ ë¯¸ì‚¬ì¼ ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ëŠ” ë©”ì†Œë“œ
 	
 	public void enemyDraw(Graphics g) {
-		for(int i=0 ; i<Main.enemyList.size() ; i++) {//Main.enemyList ±æÀÌ¸¸Å­ for¹® ½ÇÇà
-			Main.enemy = Main.enemyList.get(i);//Main.enemy ÀÇ ÁÖ¼Ò¸¦ Main.enemyList.get(i)·Î ¼³Á¤
-			if(Main.enemy.getX()==-40) {//i¹øÂ° Ç¥ÀûÀÇ À§Ä¡°¡ -40ÀÌ¸é ¸®½ºÆ®¿¡¼­ »èÁ¦
+		for(int i=0 ; i<Main.enemyList.size() ; i++) {//Main.enemyList ê¸¸ì´ë§Œí¼ forë¬¸ ì‹¤í–‰
+			Main.enemy = Main.enemyList.get(i);//Main.enemy ì˜ ì£¼ì†Œë¥¼ Main.enemyList.get(i)ë¡œ ì„¤ì •
+			if(Main.enemy.getX()==-40) {//ië²ˆì§¸ í‘œì ì˜ ìœ„ì¹˜ê°€ -40ì´ë©´ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œ
 				Main.enemyList.remove(i);
-				myScore-=10;//Ç¥ ¬À» ³õÄ¡¸é Á¡¼ö°¡ 10Á¡ °¨¼Ò
-				if(myScore<0){//Á¡¼ö°¡ 0º¸´Ù ÀÛ¾ÆÁöÁö ¾Ê°ÔÇÔ
+				myScore-=10;//í‘œì ¹ì„ ë†“ì¹˜ë©´ ì ìˆ˜ê°€ 10ì  ê°ì†Œ
+				if(myScore<0){//ì ìˆ˜ê°€ 0ë³´ë‹¤ ì‘ì•„ì§€ì§€ ì•Šê²Œí•¨
 					myScore=0;
 				}
-			}else {//i¹øÂ° Ç¥ÀûÀÇ À§Ä¡°¡ -40ÀÌ ¾Æ´Ï¸é Ç¥ÀûÀ» È­¸é¿¡ ±×¸²
+			}else {//ië²ˆì§¸ í‘œì ì˜ ìœ„ì¹˜ê°€ -40ì´ ì•„ë‹ˆë©´ í‘œì ì„ í™”ë©´ì— ê·¸ë¦¼
 				Main.enemy.enemyDraw(g);
 			}
 		}
@@ -123,17 +123,17 @@ public class GameFrame extends JFrame{
 		
 		for(int i=0 ; i<Main.MissileList.size() ; i++) {
 			for(int j=0 ; j<Main.enemyList.size() ; j++) {
-				int myMissileX = Main.MissileList.get(i).pos.x;//i¹øÂ° ³ªÀÇ ¹Ì»çÀÏÀÇ xÃà À§Ä¡ 
-				int myMissileY = Main.MissileList.get(i).pos.y+10;//i¹øÂ° ³ªÀÇ ¹Ì»çÀÏÀÇ yÃà À§Ä¡ 
-				int enemyX = Main.enemyList.get(j).getX();//j¹øÂ° Ç¥ÀûÀÇ xÃà À§Ä¡ 
-				int enemyY = Main.enemyList.get(j).getY();//j¹øÂ° Ç¥ÀûÀÇ yÃà À§Ä¡
-				int delX = myMissileX-enemyX;//i¹øÂ° ³ªÀÇ¹Ì»çÀÏÀÇ xÃàÀ§Ä¡ - j¹øÂ° Ç¥ÀûÀÇ xÃà À§Ä¡ 
-				int delY = myMissileY-enemyY;//i¹øÂ° ³ªÀÇ ¹Ì»çÀÏÀÇ yÃà À§Ä¡ - j¹øÂ° Ç¥ÀûÀÇ yÃà À§Ä¡
-				if((delX>-50 && delX<90) && (delY>-10 && delY<50)) {//i¹øÂ° ¹Ì»çÀÏ°ú j¹øÂ° ¹Ì»çÀÏÀÇ »èÁ¦ ÆÇÁ¤ ¼³Á¤
+				int myMissileX = Main.MissileList.get(i).pos.x;//ië²ˆì§¸ ë‚˜ì˜ ë¯¸ì‚¬ì¼ì˜ xì¶• ìœ„ì¹˜ 
+				int myMissileY = Main.MissileList.get(i).pos.y+10;//ië²ˆì§¸ ë‚˜ì˜ ë¯¸ì‚¬ì¼ì˜ yì¶• ìœ„ì¹˜ 
+				int enemyX = Main.enemyList.get(j).getX();//jë²ˆì§¸ í‘œì ì˜ xì¶• ìœ„ì¹˜ 
+				int enemyY = Main.enemyList.get(j).getY();//jë²ˆì§¸ í‘œì ì˜ yì¶• ìœ„ì¹˜
+				int delX = myMissileX-enemyX;//ië²ˆì§¸ ë‚˜ì˜ë¯¸ì‚¬ì¼ì˜ xì¶•ìœ„ì¹˜ - jë²ˆì§¸ í‘œì ì˜ xì¶• ìœ„ì¹˜ 
+				int delY = myMissileY-enemyY;//ië²ˆì§¸ ë‚˜ì˜ ë¯¸ì‚¬ì¼ì˜ yì¶• ìœ„ì¹˜ - jë²ˆì§¸ í‘œì ì˜ yì¶• ìœ„ì¹˜
+				if((delX>-50 && delX<90) && (delY>-10 && delY<50)) {//ië²ˆì§¸ ë¯¸ì‚¬ì¼ê³¼ jë²ˆì§¸ ë¯¸ì‚¬ì¼ì˜ ì‚­ì œ íŒì • ì„¤ì •
 					Main.MissileList.remove(i);
 					Main.enemyList.remove(j);
-					boomList.add(new Boom(enemyX,enemyY));//Ç¥ÀûÀ» ¸ÂÃß¸é Ç¥ÀûÀÇx,yÀ§Ä¡¸¦ ¹Ş°í ÆøÆÄÀÌ¹ÌÁö¸¦ ±×¸± °´Ã¼ ÀÎ½ºÅÏ½º ÇÏ°í boomList¿¡ Ãß°¡
-					myScore +=10;//Ç¥ÀûÀ» ¸ÂÃß¸é Á¡¼ö°¡ 10Á¡ Áõ°¡
+					boomList.add(new Boom(enemyX,enemyY));//í‘œì ì„ ë§ì¶”ë©´ í‘œì ì˜x,yìœ„ì¹˜ë¥¼ ë°›ê³  í­íŒŒì´ë¯¸ì§€ë¥¼ ê·¸ë¦´ ê°ì²´ ì¸ìŠ¤í„´ìŠ¤ í•˜ê³  boomListì— ì¶”ê°€
+					myScore +=10;//í‘œì ì„ ë§ì¶”ë©´ ì ìˆ˜ê°€ 10ì  ì¦ê°€
 				}
 
 				
@@ -146,81 +146,81 @@ public class GameFrame extends JFrame{
 			if(del==-40) {
 				Main.attackList.remove(i);
 			}
-		}//Ç¥ÀûÀÌ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀÇ xÃà À§Ä¡°¡ -40ÀÌ¸é ¸®½ºÆ®¿¡¼­ »èÁ¦
+		}//í‘œì ì´ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì˜ xì¶• ìœ„ì¹˜ê°€ -40ì´ë©´ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œ
 		
 	}
 	
 	public void boomDraw(Graphics g) {
-		for(int i=0 ; i<boomList.size() ; i++) {//boomListÀÇ ±æÀÌ ¸¸Å­ for¹® ½ÇÇà
-			Boom boom = boomList.get(i);//boomÀÇ ÁÖ¼Ò¸¦ i¹øÂ° boomList·Î ¼³Á¤
+		for(int i=0 ; i<boomList.size() ; i++) {//boomListì˜ ê¸¸ì´ ë§Œí¼ forë¬¸ ì‹¤í–‰
+			Boom boom = boomList.get(i);//boomì˜ ì£¼ì†Œë¥¼ ië²ˆì§¸ boomListë¡œ ì„¤ì •
 			if(boom.getTime() > 450) {
-				boomList.remove(i);//Ç¥ÀûÀÌ ÆøÆÄµÇ°í ³ª¼­ 0.24ÃÊ Áö³ª¸é ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁÖ´Â °´Ã¼¸¦ boomList¿¡¼­ »èÁ¦
+				boomList.remove(i);//í‘œì ì´ í­íŒŒë˜ê³  ë‚˜ì„œ 0.24ì´ˆ ì§€ë‚˜ë©´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì£¼ëŠ” ê°ì²´ë¥¼ boomListì—ì„œ ì‚­ì œ
 			}else {
-				boom.boom(g);//Ç¥ÀûÀÌ ÆøÆÄµÇ°í ³ª¼­ 0.24ÃÊÀÌÇÏ¸é ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁØ´Ù
+				boom.boom(g);//í‘œì ì´ í­íŒŒë˜ê³  ë‚˜ì„œ 0.24ì´ˆì´í•˜ë©´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤€ë‹¤
 			}
 		}
-	}//Ç¥ÀûÀÌ ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×¸®´Â ¸Ş¼Òµå
+	}//í‘œì ì´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë¦¬ëŠ” ë©”ì†Œë“œ
 	
 	public void exposured(Graphics g) {
 		for(int i=0 ; i<Main.attackList.size() ; i++) {
-			int enemyAttackX = Main.attackList.get(i).getX();//Ç¥ÀûÀÌ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀÇ xÃàÀÇ À§Ä¡
-			int enemyAttackY = Main.attackList.get(i).getY();//Ç¥ÀûÀÌ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀÇ yÃàÀÇ À§Ä¡
-			int exposureX = enemyAttackX - Main.x;//Ç¥ÀûÀÌ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀÇ xÃàÀÇ À§Ä¡ - ³ªÀÇxÃà À§Ä¡
-			int exposureY = enemyAttackY - Main.y;//Ç¥ÀûÀÌ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀÇ yÃàÀÇ À§Ä¡ - ³ªÀÇyÃà À§Ä¡
-			if((exposureX>-50 &&exposureX<50) && (exposureY>-5 &&exposureY<45)) {//Ç¥ÀûÀÇ ¹Ì»çÀÏ°ú ³»°¡(³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼) ºÎµúÈ÷¸é ÆÇÁ¤ ¼³Á¤
-				Boom boom = new Boom();//exposuredList¿¡ µî·ÏÇÒ boomÀ» ÀÎ½ºÅÏ½ºÇÔ
+			int enemyAttackX = Main.attackList.get(i).getX();//í‘œì ì´ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì˜ xì¶•ì˜ ìœ„ì¹˜
+			int enemyAttackY = Main.attackList.get(i).getY();//í‘œì ì´ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì˜ yì¶•ì˜ ìœ„ì¹˜
+			int exposureX = enemyAttackX - Main.x;//í‘œì ì´ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì˜ xì¶•ì˜ ìœ„ì¹˜ - ë‚˜ì˜xì¶• ìœ„ì¹˜
+			int exposureY = enemyAttackY - Main.y;//í‘œì ì´ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì˜ yì¶•ì˜ ìœ„ì¹˜ - ë‚˜ì˜yì¶• ìœ„ì¹˜
+			if((exposureX>-50 &&exposureX<50) && (exposureY>-5 &&exposureY<45)) {//í‘œì ì˜ ë¯¸ì‚¬ì¼ê³¼ ë‚´ê°€(ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´) ë¶€ë”ªíˆë©´ íŒì • ì„¤ì •
+				Boom boom = new Boom();//exposuredListì— ë“±ë¡í•  boomì„ ì¸ìŠ¤í„´ìŠ¤í•¨
 				//boom.start();
-				exposuredList.add(boom);//boomÀ» exposuredList¿¡ Ãß°¡ÇÔ
-				Main.attackList.remove(i);//Ç¥ÀûÀÇ ¹Ì»çÀÏ°ú ³»°¡(³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼) ºÎµúÈ÷¸é ±× ¹Ì»çÀÏÀ» ¸®½ºÆ®¿¡¼­ Á¦°Å
-				myLife--;//¹Ì»çÀÏ¿¡ ¸ÂÀ¸¸é ¶óÀÌÇÁ °¨¼Ò
+				exposuredList.add(boom);//boomì„ exposuredListì— ì¶”ê°€í•¨
+				Main.attackList.remove(i);//í‘œì ì˜ ë¯¸ì‚¬ì¼ê³¼ ë‚´ê°€(ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´) ë¶€ë”ªíˆë©´ ê·¸ ë¯¸ì‚¬ì¼ì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì œê±°
+				myLife--;//ë¯¸ì‚¬ì¼ì— ë§ìœ¼ë©´ ë¼ì´í”„ ê°ì†Œ
 				if(myLife==0) {
-					thr.close();//¶óÀÌÇÁ°¡ 0ÀÌµÇ¸é ½º·¹µå¸¦ Á¾·á½ÃÅ´
-					Main.time=0;//½º·¹µåÀÇ ½ÇÇà½Ã°£À» 0À¸·Î ÃÊ±âÈ­
+					thr.close();//ë¼ì´í”„ê°€ 0ì´ë˜ë©´ ìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œì‹œí‚´
+					Main.time=0;//ìŠ¤ë ˆë“œì˜ ì‹¤í–‰ì‹œê°„ì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 					//this.dispose();
-					new Stop();//°ÔÀÓÀÌ ³¡³ª¸é(Á¡¼ö°¡0ÀÌµÇ¸é) Á¡¼öÃ¢ Ãâ·Â
+					new Stop();//ê²Œì„ì´ ëë‚˜ë©´(ì ìˆ˜ê°€0ì´ë˜ë©´) ì ìˆ˜ì°½ ì¶œë ¥
 				}
 			}
 		}
 		
 		for(int i=0 ; i<Main.enemyList.size() ; i++) {
-			int enemyX = Main.enemyList.get(i).getX();//Ç¥ÀûÀÇ xÃàÀÇ À§Ä¡
-			int enemyY = Main.enemyList.get(i).getY()+10;//Ç¥ÀûÀÇ yÃàÀÇ À§Ä¡
-			int exposureX = enemyX - Main.x;//Ç¥Àû°ú ³»°¡(³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼) ºÎµúÈù°ÍÀ» ¾Ë·ÁÁÖ´Â xÃàÀÇ ÆÇÁ¤
-			int exposureY = enemyY - Main.y;//Ç¥Àû°ú ³»°¡(³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼) ºÎµúÈù°ÍÀ» ¾Ë·ÁÁÖ´Â yÃàÀÇ ÆÇÁ¤
-			if((exposureX>-50 &&exposureX<50) && (exposureY>0 &&exposureY<60)) {//ÆøÆÄÆÇÁ¤
-				Boom boom = new Boom();//exposuredList¿¡ µî·ÏÇÒ boomÀ» ÀÎ½ºÅÏ½ºÇÔ
+			int enemyX = Main.enemyList.get(i).getX();//í‘œì ì˜ xì¶•ì˜ ìœ„ì¹˜
+			int enemyY = Main.enemyList.get(i).getY()+10;//í‘œì ì˜ yì¶•ì˜ ìœ„ì¹˜
+			int exposureX = enemyX - Main.x;//í‘œì ê³¼ ë‚´ê°€(ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´) ë¶€ë”ªíŒê²ƒì„ ì•Œë ¤ì£¼ëŠ” xì¶•ì˜ íŒì •
+			int exposureY = enemyY - Main.y;//í‘œì ê³¼ ë‚´ê°€(ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´) ë¶€ë”ªíŒê²ƒì„ ì•Œë ¤ì£¼ëŠ” yì¶•ì˜ íŒì •
+			if((exposureX>-50 &&exposureX<50) && (exposureY>0 &&exposureY<60)) {//í­íŒŒíŒì •
+				Boom boom = new Boom();//exposuredListì— ë“±ë¡í•  boomì„ ì¸ìŠ¤í„´ìŠ¤í•¨
 				//boom.start();
-				exposuredList.add(boom);//boomÀ» exposuredList¿¡ Ãß°¡ÇÔ
-				Main.enemyList.remove(i);//Ç¥ÀûÀÇ ¹Ì»çÀÏ°ú ³»°¡(³»°¡ Á¶Á¾ÇÏ´Â ±âÃ¼) ºÎµúÈ÷¸é ±× Ç¥ÀûÀ» ¸®½ºÆ®¿¡¼­ Á¦°Å
-				boomList.add(new Boom(enemyX,enemyY));//Ç¥ÀûÀ» ¸ÂÃß¸é Ç¥ÀûÀÇx,yÀ§Ä¡¸¦ ¹Ş°í ÆøÆÄÀÌ¹ÌÁö¸¦ ±×¸± °´Ã¼ ÀÎ½ºÅÏ½º ÇÏ°í boomList¿¡ Ãß°¡
-				myLife--;//¶óÀÌÇÁ °¨¼Ò
+				exposuredList.add(boom);//boomì„ exposuredListì— ì¶”ê°€í•¨
+				Main.enemyList.remove(i);//í‘œì ì˜ ë¯¸ì‚¬ì¼ê³¼ ë‚´ê°€(ë‚´ê°€ ì¡°ì¢…í•˜ëŠ” ê¸°ì²´) ë¶€ë”ªíˆë©´ ê·¸ í‘œì ì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì œê±°
+				boomList.add(new Boom(enemyX,enemyY));//í‘œì ì„ ë§ì¶”ë©´ í‘œì ì˜x,yìœ„ì¹˜ë¥¼ ë°›ê³  í­íŒŒì´ë¯¸ì§€ë¥¼ ê·¸ë¦´ ê°ì²´ ì¸ìŠ¤í„´ìŠ¤ í•˜ê³  boomListì— ì¶”ê°€
+				myLife--;//ë¼ì´í”„ ê°ì†Œ
 				if(myLife==0) {
-					thr.close();//¶óÀÌÇÁ°¡ 0ÀÌµÇ¸é ½º·¹µå¸¦ Á¾·á½ÃÅ´
-					Main.time=0;//½º·¹µåÀÇ ½ÇÇà½Ã°£À» 0À¸·Î ÃÊ±âÈ­
+					thr.close();//ë¼ì´í”„ê°€ 0ì´ë˜ë©´ ìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œì‹œí‚´
+					Main.time=0;//ìŠ¤ë ˆë“œì˜ ì‹¤í–‰ì‹œê°„ì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 					//this.dispose();
-					new Stop();//°ÔÀÓÀÌ ³¡³ª¸é(Á¡¼ö°¡0ÀÌµÇ¸é) Á¡¼öÃ¢ Ãâ·Â
+					new Stop();//ê²Œì„ì´ ëë‚˜ë©´(ì ìˆ˜ê°€0ì´ë˜ë©´) ì ìˆ˜ì°½ ì¶œë ¥
 				}
 			}
 			
 		}
 		
-		for(int i=0 ; i<exposuredList.size() ; i++) {//exposuredListÀÇ ±æÀÌ ¸¸Å­ for¹® ½ÇÇà
-			Boom boom = exposuredList.get(i);//boomÀÇ ÁÖ¼Ò¸¦ i¹øÂ° exposuredList·Î ¼³Á¤
+		for(int i=0 ; i<exposuredList.size() ; i++) {//exposuredListì˜ ê¸¸ì´ ë§Œí¼ forë¬¸ ì‹¤í–‰
+			Boom boom = exposuredList.get(i);//boomì˜ ì£¼ì†Œë¥¼ ië²ˆì§¸ exposuredListë¡œ ì„¤ì •
 			if(boom.getTime() > 200) {
-				exposuredList.remove(i);//Ç¥ÀûÀÌ ÆøÆÄµÇ°í ³ª¼­ 0.10ÃÊ Áö³ª¸é ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁÖ´Â °´Ã¼¸¦ exposuredList¿¡¼­ »èÁ¦
+				exposuredList.remove(i);//í‘œì ì´ í­íŒŒë˜ê³  ë‚˜ì„œ 0.10ì´ˆ ì§€ë‚˜ë©´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì£¼ëŠ” ê°ì²´ë¥¼ exposuredListì—ì„œ ì‚­ì œ
 			}else {
-				boom.exposured(g);//Ç¥ÀûÀÌ ÆøÆÄµÇ°í ³ª¼­ 0.10ÃÊÀÌÇÏ¸é ÆøÆÄÇÏ´Â ÀÌ¹ÌÁö¸¦ ±×·ÁÁØ´Ù
+				boom.exposured(g);//í‘œì ì´ í­íŒŒë˜ê³  ë‚˜ì„œ 0.10ì´ˆì´í•˜ë©´ í­íŒŒí•˜ëŠ” ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤€ë‹¤
 			}
 		}
 	}
 	
 	public void drawString(Graphics2D g) {
-		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);//±Û¾¾°¡ ¾È±úÁö°Ô ÇØÁØ´Ù
-		g.setFont(new Font("Arial",Font.BOLD,24));//±Û¾¾Ã¼¿Í ±Û¾¾ÀÇ ±½±â Å©±â ¼³Á¤
-		g.drawString("MyScore : ", 570 , 70);//MyScore¸¦ x=570,y=70ÀÇ À§Ä¡¿¡ ±×·ÁÁÜ
-		g.drawString(Integer.toString(myScore), 700, 70);//³ªÀÇ Á¡¼ö¸¦ x=700,y=70ÀÇ À§Ä¡¿¡ ±×·ÁÁÜ
-		g.drawString("MyLife : ", 20 , 70);//MyLife¸¦ x=20,y=70ÀÇ À§Ä¡¿¡ ±×·ÁÁÜ
-		g.drawString(Integer.toString(myLife), 110, 70);//³ªÀÇ ¶óÀÌÇÁ¸¦ x=100,y=70ÀÇ À§Ä¡¿¡ ±×·ÁÁÜ
+		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);//ê¸€ì”¨ê°€ ì•ˆê¹¨ì§€ê²Œ í•´ì¤€ë‹¤
+		g.setFont(new Font("Arial",Font.BOLD,24));//ê¸€ì”¨ì²´ì™€ ê¸€ì”¨ì˜ êµµê¸° í¬ê¸° ì„¤ì •
+		g.drawString("MyScore : ", 570 , 70);//MyScoreë¥¼ x=570,y=70ì˜ ìœ„ì¹˜ì— ê·¸ë ¤ì¤Œ
+		g.drawString(Integer.toString(myScore), 700, 70);//ë‚˜ì˜ ì ìˆ˜ë¥¼ x=700,y=70ì˜ ìœ„ì¹˜ì— ê·¸ë ¤ì¤Œ
+		g.drawString("MyLife : ", 20 , 70);//MyLifeë¥¼ x=20,y=70ì˜ ìœ„ì¹˜ì— ê·¸ë ¤ì¤Œ
+		g.drawString(Integer.toString(myLife), 110, 70);//ë‚˜ì˜ ë¼ì´í”„ë¥¼ x=100,y=70ì˜ ìœ„ì¹˜ì— ê·¸ë ¤ì¤Œ
 	}
 /*
 	public int getMyScore() {
@@ -229,33 +229,33 @@ public class GameFrame extends JFrame{
 	*/
 	
 	public void drawCould(Graphics g) {
-		for(int i=0 ; i<Main.couldList.size() ; i++) {//Main.couldListÀÇ ±æÀÌ¸¸Å­ for¹® ½ÇÇà
-			int x = Main.couldList.get(i).getX();//i¹øÂ° ±¸¸§ÀÇ xÃàÀÇ À§Ä¡
+		for(int i=0 ; i<Main.couldList.size() ; i++) {//Main.couldListì˜ ê¸¸ì´ë§Œí¼ forë¬¸ ì‹¤í–‰
+			int x = Main.couldList.get(i).getX();//ië²ˆì§¸ êµ¬ë¦„ì˜ xì¶•ì˜ ìœ„ì¹˜
 			if(x<-170) {
-				Main.couldList.remove(i);//i¹øÂ° ±¸¸§ÀÇ xÃàÀÇ À§Ä¡°¡ -170º¸´Ù ÀÛÀ¸¸é ¸®½ºÆ®¿¡¼­ »èÁ¦
+				Main.couldList.remove(i);//ië²ˆì§¸ êµ¬ë¦„ì˜ xì¶•ì˜ ìœ„ì¹˜ê°€ -170ë³´ë‹¤ ì‘ìœ¼ë©´ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œ
 			}
 			else {
-				Main.couldList.get(i).drawCould(g);//i¹øÂ° ±¸¸§ÀÇ xÃàÀÇ À§Ä¡°¡ -170º¸´Ù Å©¸é ±¸¸§ ÀÌ¹ÌÁö¸¦ ±×·ÁÁÜ
+				Main.couldList.get(i).drawCould(g);//ië²ˆì§¸ êµ¬ë¦„ì˜ xì¶•ì˜ ìœ„ì¹˜ê°€ -170ë³´ë‹¤ í¬ë©´ êµ¬ë¦„ ì´ë¯¸ì§€ë¥¼ ê·¸ë ¤ì¤Œ
 			}
 		}
 	}
 	
    public void reFresh() {
-	    Main.key.keyStop();//°ÔÀÓÀÌ ´Ù½Ã ½ÇÇàµÇ¸é Å°°ü·Ã ÀÌº¥Æ®¸¦ ´ã´çÇÏ¸é º¯¼öµéÀ» false·Î ¼³Á¤
-		//setTitle("2ÇĞ³â 1ÇĞ±â °³ÀÎ ÇÁ·ÎÁ§Æ®");
+	    Main.key.keyStop();//ê²Œì„ì´ ë‹¤ì‹œ ì‹¤í–‰ë˜ë©´ í‚¤ê´€ë ¨ ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ë©´ ë³€ìˆ˜ë“¤ì„ falseë¡œ ì„¤ì •
+		//setTitle("2í•™ë…„ 1í•™ê¸° ê°œì¸ í”„ë¡œì íŠ¸");
 		//setSize(Main.width,Main.height);
 		//setLocation(Main.f_x,Main.f_y);
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setResizable(false);
 	  //addKeyListener(Main.key);
-		thr = new GameThread();//»õ·Î¿î ½º·¹µå °´Ã¼¸¦ ÀÎ½ºÅÏ½ºÇÔ
-		thr.start();//ÀÎ½ºÅÏ½ºÇÑ ½º·¹µå°´Ã¼¸¦ ½ÇÇà½ÃÅ´
+		thr = new GameThread();//ìƒˆë¡œìš´ ìŠ¤ë ˆë“œ ê°ì²´ë¥¼ ì¸ìŠ¤í„´ìŠ¤í•¨
+		thr.start();//ì¸ìŠ¤í„´ìŠ¤í•œ ìŠ¤ë ˆë“œê°ì²´ë¥¼ ì‹¤í–‰ì‹œí‚´
 		setVisible(true);
-		myLife=10;//¶óÀÌÇÁ¸¦ ÃÊ±â°ª(10)À¸·Î ¼³Á¤
-		myScore=0;//Á¡¼ö¸¦ ÃÊ±â°ª(0)À¸·Î ¼³Á¤
-		Main.x = 100;//³ªÀÇ xÃà À§Ä¡¸¦ 100À¸·Î ÃÊ±âÈ­
-		Main.y = 100;//³ªÀÇ yÃà À§Ä¡¸¦ 100À¸·Î ÃÊ±âÈ­
-		new Main();//ArrayList¸¦ µî·ÏÇÑ ¸ğµç °´Ã¼¸¦ »èÁ¦½ÃÅ´
+		myLife=10;//ë¼ì´í”„ë¥¼ ì´ˆê¸°ê°’(10)ìœ¼ë¡œ ì„¤ì •
+		myScore=0;//ì ìˆ˜ë¥¼ ì´ˆê¸°ê°’(0)ìœ¼ë¡œ ì„¤ì •
+		Main.x = 100;//ë‚˜ì˜ xì¶• ìœ„ì¹˜ë¥¼ 100ìœ¼ë¡œ ì´ˆê¸°í™”
+		Main.y = 100;//ë‚˜ì˜ yì¶• ìœ„ì¹˜ë¥¼ 100ìœ¼ë¡œ ì´ˆê¸°í™”
+		new Main();//ArrayListë¥¼ ë“±ë¡í•œ ëª¨ë“  ê°ì²´ë¥¼ ì‚­ì œì‹œí‚´
    }
 	
 
