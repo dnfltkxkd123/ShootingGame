@@ -11,7 +11,7 @@ public class Main {
 	static Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	//프레임이 윈도우에 표시될때 위치를 세팅하기 위해
 	//현재 모니터의 해상도 값을 받아옵니다.
-	static int f_x = (int)(screen.getWidth()/2 - width/2);
+	static int f_x = (int)(screen.getWidth()/2 - width/2);;
 	static int f_y = (int)(screen.getHeight()/2 - height/2);
 	static int x=100;//플레이어가 조작할 기체의 초기 위치
 	static int y=100;//플레이어가 조작할 기체의 초기 위치
