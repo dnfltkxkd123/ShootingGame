@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 
 import java.awt.Dimension;
@@ -6,30 +6,30 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public class Main {
-	static int width = 800;//°ÔÀÓÈ­¸é ³Êºñ
-	static int height = 600;//°ÔÀÓÈ­¸é ³ôÀÌ
+	static int width = 800;//ê²Œì„í™”ë©´ ë„ˆë¹„
+	static int height = 600;//ê²Œì„í™”ë©´ ë†’ì´
 	static Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-	//ÇÁ·¹ÀÓÀÌ À©µµ¿ì¿¡ Ç¥½ÃµÉ¶§ À§Ä¡¸¦ ¼¼ÆÃÇÏ±â À§ÇØ
-	//ÇöÀç ¸ğ´ÏÅÍÀÇ ÇØ»óµµ °ªÀ» ¹Ş¾Æ¿É´Ï´Ù.
+	//í”„ë ˆì„ì´ ìœˆë„ìš°ì— í‘œì‹œë ë•Œ ìœ„ì¹˜ë¥¼ ì„¸íŒ…í•˜ê¸° ìœ„í•´
+	//í˜„ì¬ ëª¨ë‹ˆí„°ì˜ í•´ìƒë„ ê°’ì„ ë°›ì•„ì˜µë‹ˆë‹¤.
 	static int f_x = (int)(screen.getWidth()/2 - width/2);
 	static int f_y = (int)(screen.getHeight()/2 - height/2);
-	static int x=100;//ÇÃ·¹ÀÌ¾î°¡ Á¶ÀÛÇÒ ±âÃ¼ÀÇ ÃÊ±â À§Ä¡
-	static int y=100;//ÇÃ·¹ÀÌ¾î°¡ Á¶ÀÛÇÒ ±âÃ¼ÀÇ ÃÊ±â À§Ä¡
+	static int x=100;//í”Œë ˆì´ì–´ê°€ ì¡°ì‘í•  ê¸°ì²´ì˜ ì´ˆê¸° ìœ„ì¹˜
+	static int y=100;//í”Œë ˆì´ì–´ê°€ ì¡°ì‘í•  ê¸°ì²´ì˜ ì´ˆê¸° ìœ„ì¹˜
 	
-	static ArrayList<Missile> MissileList = new ArrayList();//ÇÃ·¹ÀÌ¾î°¡ Á¶ÀÛÇÒ ±âÃ¼°¡ ¹ß»çÇÒ ¹Ì»çÀÏÀ» ´ãÀ» ArrayList 
+	static ArrayList<Missile> MissileList = new ArrayList();//í”Œë ˆì´ì–´ê°€ ì¡°ì‘í•  ê¸°ì²´ê°€ ë°œì‚¬í•  ë¯¸ì‚¬ì¼ì„ ë‹´ì„ ArrayList 
 	static Missile ms;
 	
-	static ArrayList<Enemy> enemyList = new ArrayList<Enemy>();//Ç¥ÀûµéÀ» ´ãÀ» ArrayList 
+	static ArrayList<Enemy> enemyList = new ArrayList<Enemy>();//í‘œì ë“¤ì„ ë‹´ì„ ArrayList 
 	static Enemy enemy;
 	
-	static ArrayList<EnemyAttack> attackList  = new ArrayList<EnemyAttack>();//Ç¥ÀûÀÌ ¹ß»çÇÒ ¹Ì»çÀÏÀ» ´ãÀ» ArrayList 
+	static ArrayList<EnemyAttack> attackList  = new ArrayList<EnemyAttack>();//í‘œì ì´ ë°œì‚¬í•  ë¯¸ì‚¬ì¼ì„ ë‹´ì„ ArrayList 
 	static EnemyAttack attack;
 	
-	static ArrayList<Could> couldList = new ArrayList<Could>();//±¸¸§ÀÇ Á¤º¸¸¦ ´ãÀ» ArrayList
-	static GameFrame gameframe;//staticÀ¸·Î »ç¿ëÇÒ GameFrame
+	static ArrayList<Could> couldList = new ArrayList<Could>();//êµ¬ë¦„ì˜ ì •ë³´ë¥¼ ë‹´ì„ ArrayList
+	static GameFrame gameframe;//staticìœ¼ë¡œ ì‚¬ìš©í•  GameFrame
 	
-	static GameKey key = new GameKey();//Å° ÀÌº¥Æ®ÀÇ Á¤º¸¸¦ ´ã°í ÀÖ´Â ¸É¹öº¯¼ö
-	static int time=0;//GameThread Å¬·¡½ºÀÇ ½º·¹µåÀÇ ½ÇÇà ½Ã°£À» ±â·ÏÇÒ º¯¼ö
+	static GameKey key = new GameKey();//í‚¤ ì´ë²¤íŠ¸ì˜ ì •ë³´ë¥¼ ë‹´ê³  ìˆëŠ” ë§´ë²„ë³€ìˆ˜
+	static int time=0;//GameThread í´ë˜ìŠ¤ì˜ ìŠ¤ë ˆë“œì˜ ì‹¤í–‰ ì‹œê°„ì„ ê¸°ë¡í•  ë³€ìˆ˜
 	static int playTime=0;//
 	
 	Main(){
@@ -49,7 +49,7 @@ public class Main {
 			couldList.remove(i);
 			i--;
 		}
-	}//°ÔÀÓÀ» ´Ù½Ã ½ÃÀÛÇÒ¶§ »ı¼ºÀÚ¸¦ »ç¿ëÇØ¼­, static º¯¼öµé ¾È¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ÀüºÎ Áö¿ö¼­ ÃÊ±âÈ­ ÇÔ
+	}//ê²Œì„ì„ ë‹¤ì‹œ ì‹œì‘í• ë•Œ ìƒì„±ìë¥¼ ì‚¬ìš©í•´ì„œ, static ë³€ìˆ˜ë“¤ ì•ˆì— ìˆëŠ” ë°ì´í„°ë¥¼ ì „ë¶€ ì§€ì›Œì„œ ì´ˆê¸°í™” í•¨
 	
 	public static void main(String[] args) {
 		//new GameFrame();

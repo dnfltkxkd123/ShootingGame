@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -8,11 +8,11 @@ import javax.swing.ImageIcon;
 
 public class Enemy{
 	
-	Image enemy = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\°ÔÀÓ¼öÁ¤\\ÆÄ¶ó50x38.png").getImage();//Ç¥ÀûÀÇ ÀÌ¹ÌÁö
-	private int x;//Ç¥ÀûÀÇ x À§Ä¡
-	private int y;//Ç¥ÀûÀÇ y À§Ä¡
-	private int randomX = (int)(Math.random()*3+3);//Ç¥Àû°´Ã¼ÀÇ ÀÌµ¿¼Óµµ¸¦ 3~6À¸·Î ¼³Á¤
-	private EnemyAttack attack;//Main°´Ã¼ÀÇ attackList¿¡ ´ãÀ» EnemyAttack(Ç¥ÀûÀÇ ¹Ì»çÀÏ) Å¬·¡½º¸¦ ÀÎ½ºÅÏ½ºÇÑ °´Ã¼¸¦ ÀÏ½ÃÀûÀ¸·Î ´ãÀ» º¯¼ö
+	Image enemy = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\ê²Œì„ìˆ˜ì •\\íŒŒë¼50x38.png").getImage();//í‘œì ì˜ ì´ë¯¸ì§€
+	private int x;//í‘œì ì˜ x ìœ„ì¹˜
+	private int y;//í‘œì ì˜ y ìœ„ì¹˜
+	private int randomX = (int)(Math.random()*3+3);//í‘œì ê°ì²´ì˜ ì´ë™ì†ë„ë¥¼ 3~6ìœ¼ë¡œ ì„¤ì •
+	private EnemyAttack attack;//Mainê°ì²´ì˜ attackListì— ë‹´ì„ EnemyAttack(í‘œì ì˜ ë¯¸ì‚¬ì¼) í´ë˜ìŠ¤ë¥¼ ì¸ìŠ¤í„´ìŠ¤í•œ ê°ì²´ë¥¼ ì¼ì‹œì ìœ¼ë¡œ ë‹´ì„ ë³€ìˆ˜
 	
 	Enemy(int x , int y){
 		this.x =x;
@@ -20,7 +20,7 @@ public class Enemy{
 	}
 	
 	public void enemyDraw(Graphics g) {
-		g.drawImage(enemy, x ,y,null );//Ç¥ÀûÀ» ±×¸²
+		g.drawImage(enemy, x ,y,null );//í‘œì ì„ ê·¸ë¦¼
 	}
 	
 	public void Enemymissile() {
@@ -28,22 +28,22 @@ public class Enemy{
 				attack = new EnemyAttack(x-20,y);
 				Main.attackList.add(attack);
 		}
-	}//°ÔÀÓÀÌ ½ÃÀÛµÇ°í ³ª¼­ 0.1ÃÊ ¶Ç´Â 1ÃÊ¸¶´Ù Ç¥ÀûÀÌ ¹ß»çÇÒ ¹Ì»çÀÏ °´Ã¼¸¦  Main.attackList¿¡ ´ãÀ»¼ö ÀÖ°Ô ÇØÁÖ´Â ¸Ş¼Òµå
+	}//ê²Œì„ì´ ì‹œì‘ë˜ê³  ë‚˜ì„œ 0.1ì´ˆ ë˜ëŠ” 1ì´ˆë§ˆë‹¤ í‘œì ì´ ë°œì‚¬í•  ë¯¸ì‚¬ì¼ ê°ì²´ë¥¼  Main.attackListì— ë‹´ì„ìˆ˜ ìˆê²Œ í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	
 
 	public void process() {
 		this.x -=randomX;
-	}//0.02ÃÊ ¸¶´Ù Ç¥ÀûÀÇ ¹Ì»çÀÏÀÌ 3~6ÀÌµ¿ÇÏ°Ô ÇÔ
+	}//0.02ì´ˆ ë§ˆë‹¤ í‘œì ì˜ ë¯¸ì‚¬ì¼ì´ 3~6ì´ë™í•˜ê²Œ í•¨
 	
 
 	public void enemyEvent() {
 		process();
 		Enemymissile();
-	}//Ç¥ÀûÀÇ ÀÌº¥Æ®¸¦ ´ã´çÇÏ´Â ¸Ş¼Òµå¸¦ ´ã°í ÀÖ´Â ¸Ş¼Òµå
+	}//í‘œì ì˜ ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ëŠ” ë©”ì†Œë“œë¥¼ ë‹´ê³  ìˆëŠ” ë©”ì†Œë“œ
 
 	public int getX() {
 		return x;
-	}//Ç¥ÀûÀÇ xÃàÀÇ À§Ä¡ ¹İÈ¯
+	}//í‘œì ì˜ xì¶•ì˜ ìœ„ì¹˜ ë°˜í™˜
 
 	public void setX(int x) {
 		this.x = x;
@@ -51,7 +51,7 @@ public class Enemy{
 
 	public int getY() {
 		return y;
-	}//Ç¥ÀûÀÇ yÃàÀÇ À§Ä¡ ¹İÈ¯
+	}//í‘œì ì˜ yì¶•ì˜ ìœ„ì¹˜ ë°˜í™˜
 
 	public void setY(int y) {
 		this.y = y;

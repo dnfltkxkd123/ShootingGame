@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.util.ArrayList;

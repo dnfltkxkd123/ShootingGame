@@ -1,4 +1,4 @@
-package °ÔÀÓ¼öÁ¤_test;
+package ê²Œì„ìˆ˜ì •_test;
 
 import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
@@ -15,42 +15,42 @@ public class GameKey extends KeyAdapter{
 	
 	
 	@Override
-	public void keyPressed(KeyEvent e) {//Å°¸¦ ´­·¶À»¶§ ÀÏ¾î³ª´Â ÀÌº¥Æ®¸¦ ´ã´çÇÏ´Â ¸Ş¼Òµå
+	public void keyPressed(KeyEvent e) {//í‚¤ë¥¼ ëˆŒë €ì„ë•Œ ì¼ì–´ë‚˜ëŠ” ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ëŠ” ë©”ì†Œë“œ
 		switch(e.getKeyCode()) {//
 		case KeyEvent.VK_UP:
-			keyUp = true;//À§·Î°¡±â ¹öÆ°À» ´©¸£¸é keyUpÀÌ true°¡µÊ
+			keyUp = true;//ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ keyUpì´ trueê°€ë¨
 			break;
 		case KeyEvent.VK_DOWN:
-			keyDown = true;//³»·Á°¡±â ¹öÆ°À» ´©¸£¸é keyDownÀÌ true°¡µÊ
+			keyDown = true;//ë‚´ë ¤ê°€ê¸° ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ keyDownì´ trueê°€ë¨
 			break;
 		case KeyEvent.VK_LEFT:
-			keyLeft = true;//¿ŞÂÊ ¹öÆ°À» ´©¸£¸é keyLeftÀÌ true°¡µÊ
+			keyLeft = true;//ì™¼ìª½ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ keyLeftì´ trueê°€ë¨
 			break;
 		case KeyEvent.VK_RIGHT:
-			keyRight = true;//¿À¸¥ÂÊ ¹öÆ°À» ´©¸£¸é keyRightÀÌ true°¡µÊ
+			keyRight = true;//ì˜¤ë¥¸ìª½ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ keyRightì´ trueê°€ë¨
 			break;
 		case KeyEvent.VK_SPACE:
-			keySpace = true;//½ºÆäÀÌ½º ¹öÆ°À» ´©¸£¸é keySpaceÀÌ true°¡µÊ
+			keySpace = true;//ìŠ¤í˜ì´ìŠ¤ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ keySpaceì´ trueê°€ë¨
 			break;
 		}
 	}
 	
 	@Override
-	public void keyReleased(KeyEvent e) {//¹öÆ°À» ¶®À»¶§ ÀÏ¾î³ª´Â ÀÌº¥Æ®¸¦ ´ã´çÇÏ´Â ¸Ş¼Òµå
+	public void keyReleased(KeyEvent e) {//ë²„íŠ¼ì„ ë• ì„ë•Œ ì¼ì–´ë‚˜ëŠ” ì´ë²¤íŠ¸ë¥¼ ë‹´ë‹¹í•˜ëŠ” ë©”ì†Œë“œ
 		switch(e.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			keyUp = false;//À§·Î°¡±â ¹öÆ°À» ¶§¸é keyUpÀÌ false°¡µÊ
+			keyUp = false;//ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ë•Œë©´ keyUpì´ falseê°€ë¨
 			break;
-		case KeyEvent.VK_DOWN://À§·Î°¡±â ¹öÆ°À» ¶§¸é keyDownÀÌ false°¡µÊ
+		case KeyEvent.VK_DOWN://ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ë•Œë©´ keyDownì´ falseê°€ë¨
 			keyDown = false;
 			break;
-		case KeyEvent.VK_LEFT://À§·Î°¡±â ¹öÆ°À» ¶§¸é keyLeftÀÌ false°¡µÊ
+		case KeyEvent.VK_LEFT://ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ë•Œë©´ keyLeftì´ falseê°€ë¨
 			keyLeft = false;
 			break;
-		case KeyEvent.VK_RIGHT://À§·Î°¡±â ¹öÆ°À» ¶§¸é keyRightÀÌ false°¡µÊ
+		case KeyEvent.VK_RIGHT://ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ë•Œë©´ keyRightì´ falseê°€ë¨
 			keyRight = false;
 			break;
-		case KeyEvent.VK_SPACE://À§·Î°¡±â ¹öÆ°À» ¶§¸é keySpaceÀÌ false°¡µÊ
+		case KeyEvent.VK_SPACE://ìœ„ë¡œê°€ê¸° ë²„íŠ¼ì„ ë•Œë©´ keySpaceì´ falseê°€ë¨
 			keySpace = false;
 			break;
 		}
@@ -69,7 +69,7 @@ public class GameKey extends KeyAdapter{
 		if(keyLeft) {
 			Main.x -=9;
 		}
-	}//Å°boolean°ªÀÌ trueÀÌ¸é ÇÃ·¹ÀÌ¾î°¡ ¿òÁ÷ÀÏ¼ö ÀÖ°Ô ÇØÁÖ´Â ¸Ş¼Òµå
+	}//í‚¤booleanê°’ì´ trueì´ë©´ í”Œë ˆì´ì–´ê°€ ì›€ì§ì¼ìˆ˜ ìˆê²Œ í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	
 	public void keyStop() {
 		this.keyUp = false;
@@ -77,17 +77,17 @@ public class GameKey extends KeyAdapter{
 		this.keyLeft = false;
 		this.keyRight = false;
 		this.keySpace = false;
-	}//°ÔÀÓÀ» ´Ù½Ã ½ÃÀÛÇÒ¶§ ÇÃ·¹ÀÌ¾î°¡ ¸¶À½´ë·Î ¿òÁ÷ÀÌÁö ¾Êµµ·Ï ¸ğµç Å°ÀÇ boolean°ªÀ» false·Î ¼³Á¤
+	}//ê²Œì„ì„ ë‹¤ì‹œ ì‹œì‘í• ë•Œ í”Œë ˆì´ì–´ê°€ ë§ˆìŒëŒ€ë¡œ ì›€ì§ì´ì§€ ì•Šë„ë¡ ëª¨ë“  í‚¤ì˜ booleanê°’ì„ falseë¡œ ì„¤ì •
 	
 	public void MissileProduct() {
-		if(keySpace) {//½ºÆäÀÌ½º¸¦ ´©¸£¸é ÇÃ·¹ÀÌ¾î°¡ ¹ß»çÇÏ´Â ¹Ì»çÀÏÀ» »ı¼º
-			for(int i=0 ; i<3 ; i++) {//ÀÏÁ¤½Ã°£ ¸¶´Ù 3°³ÀÇ ¹Ì»çÀÏÀ» »ı¼º
-				Main.ms = new Missile(Main.x,Main.y,i);//i°¡ 0ÀÌ¸é À§·Î,i°¡ 1ÀÌ¸é Áß°£,i°¡2¸é ¾Æ·¡·Î ¿òÁ÷ÀÌ¸é ¹Ì»çÀÏ »ı¼º
-				Main.MissileList.add(Main.ms);//¹Ì»çÀÏÀ» ¸®½ºÆ®¿¡ µî·Ï
+		if(keySpace) {//ìŠ¤í˜ì´ìŠ¤ë¥¼ ëˆ„ë¥´ë©´ í”Œë ˆì´ì–´ê°€ ë°œì‚¬í•˜ëŠ” ë¯¸ì‚¬ì¼ì„ ìƒì„±
+			for(int i=0 ; i<3 ; i++) {//ì¼ì •ì‹œê°„ ë§ˆë‹¤ 3ê°œì˜ ë¯¸ì‚¬ì¼ì„ ìƒì„±
+				Main.ms = new Missile(Main.x,Main.y,i);//iê°€ 0ì´ë©´ ìœ„ë¡œ,iê°€ 1ì´ë©´ ì¤‘ê°„,iê°€2ë©´ ì•„ë˜ë¡œ ì›€ì§ì´ë©´ ë¯¸ì‚¬ì¼ ìƒì„±
+				Main.MissileList.add(Main.ms);//ë¯¸ì‚¬ì¼ì„ ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡
 				break;
 			}
 		}
-	}//ÇÃ·¹ÀÌ¾î°¡ ¹ß»ç ÇÏ´Â ¹Ì»çÀÏÀ» »ı¼ºÇÏ´Â ¸Ş¼Òµå
+	}//í”Œë ˆì´ì–´ê°€ ë°œì‚¬ í•˜ëŠ” ë¯¸ì‚¬ì¼ì„ ìƒì„±í•˜ëŠ” ë©”ì†Œë“œ
 	
 	
 	
