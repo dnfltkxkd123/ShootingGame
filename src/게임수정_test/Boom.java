@@ -12,7 +12,7 @@ public class Boom{
 	Image img2 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\게임\\boom2.png").getImage();//두번째 폭파 이미지
 	Image img3 = new ImageIcon("C:\\Users\\dnflt\\Desktop\\test\\Shotting\\src\\게임\\boom3.png").getImage();//세번째 폭파 이미지
 	int x;;//폭파 이미지의 x축의 위치
-	int y;//폭파 이미지의 y축의 위치
+	int y;;//폭파 이미지의 y축의 위치
 	int time=0;//폭파 이미지가 실행시간을 기록하면 변수
 	Point point;
 	
