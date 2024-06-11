@@ -14,7 +14,7 @@ public class Boom{
 	int x;;//폭파 이미지의 x축의 위치
 	int y;;//폭파 이미지의 y축의 위치
 	int time=0;//폭파 이미지가 실행시간을 기록하면 변수
-	Point point;
+	Point point;//branch test
 	
 	Boom(int x , int y) {
 		this.x = x;
