@@ -16,7 +16,7 @@ public class Boom{
 	int time=0;//폭파 이미지가 실행시간을 기록하면 변수
 	Point point;//branch test
 	
-	Boom(int x , int y) {
+	Boom(int x , int y) {//merge test
 		this.x = x;
 		this.y = y;
 	}//표적이 폭파이미지의 위치를 담아주는 생성자
